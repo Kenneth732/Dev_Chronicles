@@ -1,0 +1,208 @@
+/* Using your theme variables */
+.projectsSection {
+  padding: 4rem 2rem;
+  background-color: var(--background-secondary);
+  border-radius: 12px;
+  margin: 3rem 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.projectCard {
+  background: var(--background-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.projectImageContainer {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.05);
+}
+
+.techStack {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.techPill {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.projectContent {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectTitle {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+}
+
+.projectDescription {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.readMoreButton {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  margin-bottom: 1rem;
+  align-self: flex-start;
+}
+
+.readMoreButton:hover {
+  text-decoration: underline;
+}
+
+.projectLinks {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.githubLink,
+.demoLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.githubLink {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.githubLink:hover {
+  background-color: var(--secondary-hover);
+}
+
+.demoLink {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.demoLink:hover {
+  background-color: var(--primary-hover);
+}
+
+.ctaContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.primaryButton {
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.primaryButton:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Expanded state */
+.projectCard.expanded {
+  grid-column: 1 / -1;
+}
+
+.projectCard.expanded .projectImageContainer {
+  height: 300px;
+}
+
+@media (min-width: 768px) {
+  .projectCard.expanded {
+    flex-direction: row;
+  }
+  
+  .projectCard.expanded .projectImageContainer {
+    width: 40%;
+    height: auto;
+  }
+  
+  .projectCard.expanded .projectContent {
+    width: 60%;
+  }
+}

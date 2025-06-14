@@ -1,0 +1,231 @@
+/* Using your theme variables */
+.testimonialsSection {
+  padding: 4rem 2rem;
+  background-color: var(--background-color);
+  border-radius: 12px;
+  margin: 3rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.testimonialContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.navButton {
+  background: var(--background-color);
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-color);
+  flex-shrink: 0;
+}
+
+.navButton:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.testimonialContent {
+  flex: 1;
+  position: relative;
+  min-height: 300px;
+}
+
+.testimonial {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  padding: 2rem;
+  background: var(--background-primary);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.testimonial.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.quote {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.quote::before,
+.quote::after {
+  content: '"';
+  font-size: 3rem;
+  color: var(--primary-color);
+  opacity: 0.2;
+  position: absolute;
+}
+
+.quote::before {
+  top: -1rem;
+  left: -1.5rem;
+}
+
+.quote::after {
+  bottom: -2.5rem;
+  right: -1.5rem;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-color);
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorName {
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+
+.authorRole {
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--secondary-color);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.indicator.active {
+  background: var(--primary-color);
+  transform: scale(1.2);
+}
+
+.companiesSection {
+  text-align: center;
+}
+
+.companiesTitle {
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.companiesGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.companyLogo {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.companyLogo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.companyLogo img {
+  height: 100%;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .quote {
+    font-size: 1.1rem;
+  }
+  
+  .quote::before,
+  .quote::after {
+    font-size: 2rem;
+  }
+  
+  .quote::before {
+    left: -0.5rem;
+  }
+  
+  .quote::after {
+    right: -0.5rem;
+  }
+  
+  .companiesGrid {
+    gap: 1rem;
+  }
+  
+  .companyLogo {
+    height: 30px;
+  }
+}

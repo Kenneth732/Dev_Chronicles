@@ -1,0 +1,301 @@
+/* Using your theme variables */
+.podcastSection {
+  padding: 4rem 2rem;
+  /* background-color: var(--background-secondary); */
+  background-color: var(--background-color);
+  border-radius: 12px;
+  margin: 3rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  /* color: var(--primary-color); */
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.currentEpisode {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  background: var(--background-primary);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+@media (min-width: 768px) {
+  .currentEpisode {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+.episodeCover {
+  position: relative;
+  min-height: 200px;
+  background: var(--secondary-color);
+}
+
+.coverImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.episodeContent {
+  padding: 2rem;
+}
+
+.episodeHeader {
+  margin-bottom: 1.5rem;
+}
+
+.episodeDate {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.episodeTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.episodeDescription {
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.audioPlayer {
+  margin: 2rem 0;
+}
+
+.playerControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.playButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.playButton:hover {
+  transform: scale(1.05);
+}
+
+.playButton svg {
+  width: 24px;
+  height: 24px;
+}
+
+.progressContainer {
+  flex: 1;
+}
+
+.progressBar {
+  width: 100%;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--track-color, var(--secondary-color));
+  border-radius: 2px;
+  outline: none;
+  margin-bottom: 0.5rem;
+}
+
+.progressBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--progress-color, var(--primary-color));
+  cursor: pointer;
+}
+
+.timeDisplay {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-color);
+}
+
+.platformLinks {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.availableOn {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.platformIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+.platformIcons a {
+  display: block;
+  width: 32px;
+  height: 32px;
+  color: var(--primary-color);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.platformIcons a:hover {
+  transform: translateY(-2px);
+  color: var(--primary-color);
+}
+
+.platformIcons svg {
+  width: 100%;
+  height: 100%;
+}
+
+.episodeList {
+  margin: 3rem 0;
+}
+
+.listTitle {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.episodes {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.episodeItem {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  background: var(--background-primary);
+}
+
+.episodeItem:hover {
+  background-color: var(--secondary-color);
+}
+
+.episodeItem.active {
+  background-color: var(--primary-light);
+}
+
+.episodeItemCover {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--secondary-color);
+}
+
+.episodeItemCover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.episodeItemInfo {
+  flex: 1;
+}
+
+.episodeItemInfo h5 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.episodeMeta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-color);
+}
+
+.ctaContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.primaryButton {
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.primaryButton:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.secondaryButton:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+}

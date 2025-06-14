@@ -1,0 +1,222 @@
+/* Using your theme variables */
+.newsletterSection {
+  padding: 4rem 2rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 12px;
+  margin: 3rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .content {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+.textContent {
+  padding: 1rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.incentive {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
+
+.incentive svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  stroke-width: 2;
+}
+
+.incentive strong {
+  font-weight: 600;
+}
+
+.form {
+  padding: 1rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 480px) {
+  .inputGroup {
+    flex-direction: row;
+  }
+}
+
+.emailInput {
+  flex: 1;
+  padding: 0.875rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background-color: white;
+}
+
+.emailInput:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.submitButton {
+  padding: 0.875rem 1.75rem;
+  background-color: var(--background-primary);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.submitButton:hover {
+  background-color: var(--secondary-color);
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  animation: rotate 1s linear infinite;
+}
+
+.spinner circle {
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-dasharray: 90, 150;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+.error {
+  color: #ffb4b4;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.privacyNote {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-top: 1rem;
+}
+
+.successMessage {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.successMessage svg {
+  stroke-width: 2;
+  margin-bottom: 1rem;
+  color: #4ade80;
+}
+
+.successMessage h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.successMessage p {
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.secondaryButton {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.secondaryButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Decorative elements */
+.newsletterSection::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(129, 140, 248, 0.4) 0%, transparent 70%);
+  z-index: 1;
+}
