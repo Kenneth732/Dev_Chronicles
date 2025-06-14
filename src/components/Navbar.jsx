@@ -78,9 +78,9 @@ const toggleDarkMode = () => {
                 <Link to="/devops" className={styles.dropdownItem}>
                   DevOps & Cloud
                 </Link>
-                <a href="/category/architecture" className={styles.dropdownItem}>
+                <Link to="/architecture" className={styles.dropdownItem}>
                   System Architecture
-                </a>
+                </Link>
               </div>
             )}
             

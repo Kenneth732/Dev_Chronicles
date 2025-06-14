@@ -36,21 +36,21 @@ const DevOpsCloud = () => {
   const platforms = [
     {
       name: "AWS",
-      logo: "/logos/aws.svg",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS66rNP7PkHlXCAPWNWBztVm_2joQDjNjGwuQ&s",
       description: "Comprehensive cloud platform with 200+ services for compute, storage, and networking",
       certifications: ["Solutions Architect Pro", "DevOps Engineer Pro", "Security Specialty"],
       expertise: "Expert"
     },
     {
       name: "Azure",
-      logo: "/logos/azure.svg",
+      logo: "https://swimburger.net/media/ppnn3pcl/azure.png",
       description: "Microsoft's cloud platform with strong enterprise integration capabilities",
       certifications: ["Azure Administrator", "DevOps Engineer", "Solutions Architect"],
       expertise: "Advanced"
     },
     {
       name: "Google Cloud",
-      logo: "/logos/gcp.svg",
+      logo: "https://static-00.iconduck.com/assets.00/google-cloud-icon-2048x1646-7admxejz.png",
       description: "High-performance cloud with strengths in data analytics and machine learning",
       certifications: ["Cloud Architect", "DevOps Engineer", "Security Engineer"],
       expertise: "Advanced"
@@ -60,19 +60,19 @@ const DevOpsCloud = () => {
   const tools = [
     {
       name: "Kubernetes",
-      logo: "/logos/kubernetes.svg",
+      logo: "https://images.seeklogo.com/logo-png/44/1/google-kubernetes-engine-gke-logo-png_seeklogo-447023.png",
       description: "Container orchestration system for automating deployment, scaling, and management",
       useCase: "Containerized applications at scale"
     },
     {
       name: "Terraform",
-      logo: "/logos/terraform.svg",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSkzmKBtTXAV70TUuJ8aJg67GLtFEwqIVr7g&s",
       description: "Infrastructure as Code tool for building, changing, and versioning infrastructure",
       useCase: "Multi-cloud provisioning"
     },
     {
       name: "ArgoCD",
-      logo: "/logos/argocd.svg",
+      logo: "https://cdn.prod.website-files.com/5f10ed4c0ebf7221fb5661a5/5f2ba11e378c8f49e8b28486_argo.png",
       description: "Declarative GitOps continuous delivery tool for Kubernetes",
       useCase: "GitOps workflows"
     }
@@ -130,7 +130,7 @@ const DevOpsCloud = () => {
           </div>
         </div>
         <div className={styles.heroIllustration}>
-          <img src="/illustrations/devops-hero.svg" alt="DevOps and Cloud engineering" />
+          <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Mastering_The_Future_With_A_Master_Degree_In_Cloud_Computing.jpg" alt="DevOps and Cloud engineering" />
         </div>
       </section>
 
@@ -249,7 +249,7 @@ const DevOpsCloud = () => {
         <div className={styles.caseStudiesGrid}>
           <div className={styles.caseStudyCard}>
             <div className={styles.caseStudyImage}>
-              <img src="/projects/cloud-migration.jpg" alt="Cloud Migration" />
+              <img src="https://www.bacancytechnology.com/blog/wp-content/uploads/2023/12/Top-10-Cloud-Migration-Strategy-Best-Practices.webp" alt="Cloud Migration" />
               <div className={styles.techStack}>
                 <span>AWS</span>
                 <span>Terraform</span>
@@ -276,7 +276,7 @@ const DevOpsCloud = () => {
           
           <div className={styles.caseStudyCard}>
             <div className={styles.caseStudyImage}>
-              <img src="/projects/cicd-pipeline.jpg" alt="CI/CD Pipeline" />
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp4enZuag-rl-2F2X7nZ6jbQJESrOSg_KWzg&s" alt="CI/CD Pipeline" />
               <div className={styles.techStack}>
                 <span>Azure</span>
                 <span>ArgoCD</span>

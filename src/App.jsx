@@ -12,9 +12,10 @@ import AboutPage from './pages/About'
 import FrontendDevelopment from './pages/FrontendDevelopment'
 import BackendEngineering from './pages/BackendEngineering'
 import DevOpsCloud from './pages/DevOpsCloud'
+import SystemArchitecture from './pages/SystemArchitecture'
 
 
-
+// architecture
 function App() {
   return (
     <div>
@@ -25,6 +26,7 @@ function App() {
           <Route path="/frontend" element={<FrontendDevelopment />} />
           <Route path="/backend" element={<BackendEngineering />} />
           <Route path="/devops" element={<DevOpsCloud />} />
+          <Route path="/architecture" element={<SystemArchitecture />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/article/:id" element={<ArticlePage />} />
