@@ -3,6 +3,7 @@
 // components/Navbar/Navbar.jsx
 import { useState, useEffect } from 'react';
 import styles from '../styles/Navbar.module.css'; // Adjust the path as necessary
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -68,20 +69,21 @@ const toggleDarkMode = () => {
             
             {activeDropdown === 'categories' && (
               <div className={styles.dropdownMenu}>
-                <a href="/category/frontend" className={styles.dropdownItem}>
+                <Link to="/frontend" className={styles.dropdownItem}>
                   Frontend Development
-                </a>
-                <a href="/category/backend" className={styles.dropdownItem}>
+                </Link>
+                <Link to="/backend" className={styles.dropdownItem}>
                   Backend Engineering
-                </a>
-                <a href="/category/devops" className={styles.dropdownItem}>
+                </Link>
+                <Link to="/devops" className={styles.dropdownItem}>
                   DevOps & Cloud
-                </a>
+                </Link>
                 <a href="/category/architecture" className={styles.dropdownItem}>
                   System Architecture
                 </a>
               </div>
             )}
+            
           </div>
 
           <a href="/about" className={styles.navLink}>About</a>
