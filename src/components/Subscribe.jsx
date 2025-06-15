@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from '../styles/Subscribe.module.css'; // Adjust the path as necessary
+import { Link } from 'react-router-dom'; // Assuming you're using React Router for navigation
 
 const Subscribe = ({ incentiveOffer = true }) => {
   const [formData, setFormData] = useState({
@@ -387,7 +388,7 @@ const Subscribe = ({ incentiveOffer = true }) => {
                     </svg>
                     <p>
                       I respect your privacy. Unsubscribe anytime. Read my{' '}
-                      <a href="/privacy" className={styles.privacyLink}>Privacy Policy</a>.
+                      <Link to="/privacy" className={styles.privacyLink}>Privacy Policy</Link>.
                     </p>
                   </div>
                 </form>

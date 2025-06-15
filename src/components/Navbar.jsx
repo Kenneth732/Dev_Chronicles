@@ -46,14 +46,14 @@ const toggleDarkMode = () => {
       <div className={styles.container}>
         {/* Logo */}
         <div className={styles.logoContainer}>
-          <a href="/" className={styles.logo}>
+          <Link to="/" className={styles.logo}>
             <span className={styles.logoPrimary}>Dev</span>Chronicles
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
         <nav className={styles.desktopNav}>
-          <a href="/" className={styles.navLink}>Home</a>
+          <Link to="/" className={styles.navLink}>Home</Link>
           
           {/* Dropdown for Categories */}
           <div className={styles.dropdownContainer}>
@@ -86,8 +86,8 @@ const toggleDarkMode = () => {
             
           </div>
 
-          <a href="/about" className={styles.navLink}>About</a>
-          <a href="/contact" className={styles.navLink}>Contact</a>
+          <Link to="/about" className={styles.navLink}>About</Link>
+          <Link to="/contact" className={styles.navLink}>Contact</Link>
         </nav>
 
         {/* Right side elements */}
@@ -141,7 +141,7 @@ const toggleDarkMode = () => {
       {isMobileMenuOpen && (
         <div className={styles.mobileMenu}>
           <div className={styles.mobileMenuContent}>
-            <a href="/" className={styles.mobileNavLink}>Home</a>
+            <Link href="/" className={styles.mobileNavLink}>Home</Link>
             
             <button 
               onClick={() => toggleDropdown('mobileCategories')}
@@ -155,23 +155,23 @@ const toggleDarkMode = () => {
             
             {activeDropdown === 'mobileCategories' && (
               <div className={styles.mobileDropdownContent}>
-                <a href="/category/frontend" className={styles.mobileDropdownItem}>
+                <Link href="/frontend" className={styles.mobileDropdownItem}>
                   Frontend Development
-                </a>
-                <a href="/category/backend" className={styles.mobileDropdownItem}>
+                </Link>
+                <Link to="/backend" className={styles.mobileDropdownItem}>
                   Backend Engineering
-                </a>
-                <a href="/category/devops" className={styles.mobileDropdownItem}>
+                </Link>
+                <Link to="/devops" className={styles.mobileDropdownItem}>
                   DevOps & Cloud
-                </a>
-                <a href="/category/architecture" className={styles.mobileDropdownItem}>
+                </Link>
+                <Link to="/architecture" className={styles.mobileDropdownItem}>
                   System Architecture
-                </a>
+                </Link>
               </div>
             )}
             
-            <a href="/about" className={styles.mobileNavLink}>About</a>
-            <a href="/contact" className={styles.mobileNavLink}>Contact</a>
+            <Link to="/about" className={styles.mobileNavLink}>About</Link>
+            <Link to="/contact" className={styles.mobileNavLink}>Contact</Link>
             
             <div className={styles.mobileMenuFooter}>
               <button className={styles.mobileIconButton}>

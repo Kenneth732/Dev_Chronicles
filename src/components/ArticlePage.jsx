@@ -257,13 +257,13 @@ function optimizeComponent() {
               <nav className={styles.toc}>
                 <ul>
                   <li className={activeSection === 'introduction' ? styles.active : ''}>
-                    <a href="#introduction">Introduction</a>
+                    <Link to="#introduction">Introduction</Link>
                   </li>
                   <li className={activeSection === 'detailed-analysis' ? styles.active : ''}>
-                    <a href="#detailed-analysis">Detailed Analysis</a>
+                    <Link to="#detailed-analysis">Detailed Analysis</Link>
                   </li>
                   <li className={activeSection === 'key-takeaways' ? styles.active : ''}>
-                    <a href="#key-takeaways">Key Takeaways</a>
+                    <Link to="#key-takeaways">Key Takeaways</Link>
                   </li>
                 </ul>
               </nav>
@@ -272,18 +272,18 @@ function optimizeComponent() {
             <div className={styles.sidebarSection}>
               <h3>Related Articles</h3>
               <div className={styles.relatedArticles}>
-                <a href="#" className={styles.relatedArticle}>
+                <Link to="#" className={styles.relatedArticle}>
                   <span className={styles.relatedArticleTitle}>Advanced React Patterns</span>
                   <span className={styles.relatedArticleMeta}>8 min read</span>
-                </a>
-                <a href="#" className={styles.relatedArticle}>
+                </Link>
+                <Link to="#" className={styles.relatedArticle}>
                   <span className={styles.relatedArticleTitle}>Performance Optimization</span>
                   <span className={styles.relatedArticleMeta}>12 min read</span>
-                </a>
-                <a href="#" className={styles.relatedArticle}>
+                </Link>
+                <Link href="#" className={styles.relatedArticle}>
                   <span className={styles.relatedArticleTitle}>CSS Architecture</span>
                   <span className={styles.relatedArticleMeta}>6 min read</span>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -324,3 +324,4 @@ function optimizeComponent() {
 };
 
 export default ArticlePage;
+

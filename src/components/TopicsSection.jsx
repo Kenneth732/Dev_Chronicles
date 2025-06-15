@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from '../styles/TopicsSection.module.css';
-
+import { Link } from 'react-router-dom';
 const TopicsSection = () => {
   // Sample topics data - replace with your actual data or API fetch
   const [topics, setTopics] = useState([
@@ -109,13 +109,13 @@ const TopicsSection = () => {
       )}
 
       <div className={styles.ctaContainer}>
-        <a href="/topics" className={styles.primaryButton}>
+        <Link to="/topics" className={styles.primaryButton}>
           Browse All Topics
-        </a>
+        </Link>
         {activeFilter && (
-          <a href={`/topics/${activeFilter}`} className={styles.secondaryButton}>
+          <Link to={`/topics/${activeFilter}`} className={styles.secondaryButton}>
             View {topics.find(t => t.id === activeFilter)?.name} Content
-          </a>
+          </Link>
         )}
       </div>
     </section>

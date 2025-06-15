@@ -295,8 +295,8 @@ const AboutPage = () => {
                   <div className={styles.cardHoverContent}>
                     <p className={styles.funFact}>Fun fact: {member.funFact}</p>
                     <div className={styles.socialLinks}>
-                      <a href="#" aria-label={`${member.name} Twitter`}>𝕏</a>
-                      <a href="#" aria-label={`${member.name} LinkedIn`}>in</a>
+                      <Link to="#" aria-label={`${member.name} Twitter`}>𝕏</Link>
+                      <Link to="#" aria-label={`${member.name} LinkedIn`}>in</Link>
                     </div>
                   </div>
                 )}
