@@ -13,9 +13,10 @@ import FrontendDevelopment from './pages/FrontendDevelopment'
 import BackendEngineering from './pages/BackendEngineering'
 import DevOpsCloud from './pages/DevOpsCloud'
 import SystemArchitecture from './pages/SystemArchitecture'
+import BrowseEpisodes from './components/BrowseEpisodes'
 
 
-// architecture
+// podcast
 function App() {
   return (
     <div>
@@ -27,6 +28,7 @@ function App() {
           <Route path="/backend" element={<BackendEngineering />} />
           <Route path="/devops" element={<DevOpsCloud />} />
           <Route path="/architecture" element={<SystemArchitecture />} />
+          <Route path="/podcast" element={<BrowseEpisodes />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/article/:id" element={<ArticlePage />} />

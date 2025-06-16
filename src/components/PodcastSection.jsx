@@ -5,6 +5,7 @@ import styles from '../styles/PodcastSection.module.css';
 import { FiPlay, FiPause, FiSkipBack, FiSkipForward, FiVolume2 } from 'react-icons/fi';
 import { FaSpotify, FaApple, FaGooglePlay } from 'react-icons/fa';
 import { RiSpeedLine } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 const PodcastSection = () => {
   const [episodes] = useState([
@@ -85,7 +86,7 @@ const PodcastSection = () => {
   const canvasRef = useRef(null);
   const animationRef = useRef(null);
 
-  // Initialize audio settings
+  // Initialize audio settings the play list ya audio
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = volume;
@@ -507,12 +508,12 @@ const PodcastSection = () => {
                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
-              <a href="/podcast" className={styles.secondaryButton}>
+              <Link to="/podcast" className={styles.secondaryButton}>
                 <span>Browse All Episodes</span>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M8 7L12 11L16 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
