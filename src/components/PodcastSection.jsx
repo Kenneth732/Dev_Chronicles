@@ -1,80 +1,177 @@
+
+
 import { useState, useEffect, useRef } from 'react';
-import styles from '../styles/PodcastSection.module.css'; // Adjust the path as necessary
-import Ep001 from "../assets/ep001.mp3"
-import Ep002 from "../assets/ep002.mp3"
-import { Link } from 'react-router-dom';
+import styles from '../styles/PodcastSection.module.css';
+import { FiPlay, FiPause, FiSkipBack, FiSkipForward, FiVolume2 } from 'react-icons/fi';
+import { FaSpotify, FaApple, FaGooglePlay } from 'react-icons/fa';
+import { RiSpeedLine } from 'react-icons/ri';
 
 const PodcastSection = () => {
-const [episodes, setEpisodes] = useState([
-  {
-    id: 'ep001',
-    title: 'The Future of Web Development in 2024',
-    date: '2024-01-15',
-    duration: '45:22',
-    description: 'We discuss emerging trends in web development including WASM, React Server Components, and the resurgence of monoliths.',
-    audioUrl: Ep001,
-    coverImage: 'https://media.licdn.com/dms/image/v2/D4D12AQFV9lmozBJXhQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1705124282310?e=2147483647&v=beta&t=AkLKb8_R4E_HFN-mFfPr9wHLbwiQs29Nz5iKnB97V6I',
-    platforms: {
-      spotify: 'https://spotify.com/yourpodcast/ep001',
-      apple: 'https://apple.com/yourpodcast/ep001',
-      google: 'https://google.com/yourpodcast/ep001'
+  const [episodes] = useState([
+    {
+      id: 'ep001',
+      title: 'The Future of Web Development in 2024',
+      date: '2024-01-15',
+      duration: 2722,
+      description: 'We discuss emerging trends in web development including WASM, React Server Components, and the resurgence of monoliths. This episode features special guests from leading tech companies sharing their insights on the evolving landscape.',
+      audioUrl: '/ep001.mp3',
+      coverImage: 'https://media.licdn.com/dms/image/v2/D4D12AQFV9lmozBJXhQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1705124282310?e=2147483647&v=beta&t=AkLKb8_R4E_HFN-mFfPr9wHLbwiQs29Nz5iKnB97V6I',
+      platforms: {
+        spotify: 'https://spotify.com/yourpodcast/ep001',
+        apple: 'https://apple.com/yourpodcast/ep001',
+        google: 'https://google.com/yourpodcast/ep001'
+      },
+      tags: ['Web Dev', 'Trends', '2024'],
+      featured: true
+    },
+    {
+      id: 'ep002',
+      title: 'AI Revolution: From GPT-4 to Gemini',
+      date: '2024-02-10',
+      duration: 3138,
+      description: 'Exploring the latest advancements in AI, comparing different LLMs, and discussing practical applications for developers. Our panel of AI researchers breaks down the technical details in accessible ways.',
+      audioUrl: '/ep002.mp3',
+      coverImage: 'https://miro.medium.com/v2/resize:fit:1200/0*zyBWRKPZV8lOV69E.jpg',
+      platforms: {
+        spotify: 'https://spotify.com/yourpodcast/ep002',
+        apple: 'https://apple.com/yourpodcast/ep002',
+        google: 'https://google.com/yourpodcast/ep002'
+      },
+      tags: ['AI', 'Machine Learning', 'LLMs'],
+      featured: true
+    },
+    {
+      id: 'ep003',
+      title: 'Building Scalable Microservices with Go',
+      date: '2024-03-05',
+      duration: 2325,
+      description: 'Deep dive into microservices architecture using Go, covering best practices, common pitfalls, and performance optimization. Learn from the engineering team at a Fortune 500 company about their real-world implementation.',
+      audioUrl: '/ep003.mp3',
+      coverImage: 'https://media.licdn.com/dms/image/v2/D5612AQGRaGanbQtebA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1709851350044?e=2147483647&v=beta&t=pcnPt9fPmXuz5jCzXq7Pg0GUKixpFydPIkbDcT38GKA',
+      platforms: {
+        spotify: 'https://spotify.com/yourpodcast/ep003',
+        apple: 'https://apple.com/yourpodcast/ep003',
+        google: 'https://google.com/yourpodcast/ep003'
+      },
+      tags: ['Go', 'Microservices', 'Architecture']
+    },
+    {
+      id: 'ep004',
+      title: 'The State of JavaScript 2024',
+      date: '2024-04-20',
+      duration: 2952,
+      description: 'Annual review of the JavaScript ecosystem, including new features, framework trends, and developer survey results. We analyze data from over 10,000 developers to identify the most significant shifts in the JS world.',
+      audioUrl: '/ep004.mp3',
+      coverImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2mFl6Vz7lP3ir2TcuwqVV7kk7xLPx0oWwNw&s',
+      platforms: {
+        spotify: 'https://spotify.com/yourpodcast/ep004',
+        apple: 'https://apple.com/yourpodcast/ep004',
+        google: 'https://google.com/yourpodcast/ep004'
+      },
+      tags: ['JavaScript', 'Frontend', 'Survey']
     }
-  },
-  {
-    id: 'ep002',
-    title: 'AI Revolution: From GPT-4 to Gemini',
-    date: '2024-02-10',
-    duration: '52:18',
-    description: 'Exploring the latest advancements in AI, comparing different LLMs, and discussing practical applications for developers.',
-    audioUrl: Ep002,
-    coverImage: 'https://miro.medium.com/v2/resize:fit:1200/0*zyBWRKPZV8lOV69E.jpg',
-    platforms: {
-      spotify: 'https://spotify.com/yourpodcast/ep002',
-      apple: 'https://apple.com/yourpodcast/ep002',
-      google: 'https://google.com/yourpodcast/ep002'
-    }
-  },
-  {
-    id: 'ep003',
-    title: 'Building Scalable Microservices with Go',
-    date: '2024-03-05',
-    duration: '38:45',
-    description: 'Deep dive into microservices architecture using Go, covering best practices, common pitfalls, and performance optimization.',
-    audioUrl: 'https://example.com/podcasts/ep003.mp3',
-    coverImage: 'https://media.licdn.com/dms/image/v2/D5612AQGRaGanbQtebA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1709851350044?e=2147483647&v=beta&t=pcnPt9fPmXuz5jCzXq7Pg0GUKixpFydPIkbDcT38GKA',
-    platforms: {
-      spotify: 'https://spotify.com/yourpodcast/ep003',
-      apple: 'https://apple.com/yourpodcast/ep003',
-      google: 'https://google.com/yourpodcast/ep003'
-    }
-  },
-  {
-    id: 'ep004',
-    title: 'The State of JavaScript 2024',
-    date: '2024-04-20',
-    duration: '49:12',
-    description: 'Annual review of the JavaScript ecosystem, including new features, framework trends, and developer survey results.',
-    audioUrl: 'https://example.com/podcasts/ep004.mp3',
-    coverImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2mFl6Vz7lP3ir2TcuwqVV7kk7xLPx0oWwNw&s',
-    platforms: {
-      spotify: 'https://spotify.com/yourpodcast/ep004',
-      apple: 'https://apple.com/yourpodcast/ep004',
-      google: 'https://google.com/yourpodcast/ep004'
-    }
-  }
-]);
+  ]);
 
   const audioRef = useRef(null);
-  const [currentEpisode, setCurrentEpisode] = useState(null);
+  const [currentEpisode, setCurrentEpisode] = useState(episodes[0]);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
+  const [volume, setVolume] = useState(0.8);
+  const [playbackRate, setPlaybackRate] = useState(1);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [showSpeedControls, setShowSpeedControls] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [activeTab, setActiveTab] = useState('featured');
+  const canvasRef = useRef(null);
+  const animationRef = useRef(null);
 
+  // Initialize audio settings
   useEffect(() => {
-    if (episodes.length > 0 && !currentEpisode) {
-      setCurrentEpisode(episodes[0]);
+    if (audioRef.current) {
+      audioRef.current.volume = volume;
+      audioRef.current.playbackRate = playbackRate;
     }
-  }, [episodes, currentEpisode]);
+  }, [volume, playbackRate]);
+
+  // Mouse position tracker for parallax effects
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({
+        x: e.clientX / window.innerWidth - 0.5,
+        y: e.clientY / window.innerHeight - 0.5
+      });
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  // Particle background effect
+  useEffect(() => {
+    if (!canvasRef.current) return;
+
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    const particles = [];
+    const particleCount = 15;
+    
+    // Set canvas size
+    const resizeCanvas = () => {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    };
+    
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Create particles
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 3 + 1,
+        speed: Math.random() * 0.5 + 0.2,
+        opacity: Math.random() * 0.1 + 0.05,
+      });
+    }
+
+    // Animation loop
+    const animateParticles = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      particles.forEach(particle => {
+        // Mouse attraction effect
+        const dx = mousePosition.x * 100 - particle.x;
+        const dy = mousePosition.y * 100 - particle.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < 150) {
+          particle.x += dx * 0.01;
+          particle.y += dy * 0.01;
+        } else {
+          particle.y -= particle.speed;
+          if (particle.y < 0) {
+            particle.y = canvas.height;
+            particle.x = Math.random() * canvas.width;
+          }
+        }
+        
+        ctx.fillStyle = `rgba(79, 70, 229, ${particle.opacity})`;
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      
+      animationRef.current = requestAnimationFrame(animateParticles);
+    };
+    
+    animateParticles();
+
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      cancelAnimationFrame(animationRef.current);
+    };
+  }, [mousePosition.x, mousePosition.y]);
 
   const handlePlayPause = () => {
     if (isPlaying) {
@@ -87,13 +184,32 @@ const [episodes, setEpisodes] = useState([
 
   const handleTimeUpdate = () => {
     setCurrentTime(audioRef.current.currentTime);
-    setDuration(audioRef.current.duration || 0);
   };
 
   const handleSeek = (e) => {
-    const seekTime = e.target.value;
+    const seekTime = parseFloat(e.target.value);
     audioRef.current.currentTime = seekTime;
     setCurrentTime(seekTime);
+  };
+
+  const handleVolumeChange = (e) => {
+    const newVolume = parseFloat(e.target.value);
+    setVolume(newVolume);
+    audioRef.current.volume = newVolume;
+  };
+
+  const handlePlaybackRateChange = (rate) => {
+    setPlaybackRate(rate);
+    audioRef.current.playbackRate = rate;
+    setShowSpeedControls(false);
+  };
+
+  const skipForward = () => {
+    audioRef.current.currentTime = Math.min(audioRef.current.currentTime + 15, audioRef.current.duration);
+  };
+
+  const skipBackward = () => {
+    audioRef.current.currentTime = Math.max(audioRef.current.currentTime - 15, 0);
   };
 
   const formatTime = (seconds) => {
@@ -102,152 +218,308 @@ const [episodes, setEpisodes] = useState([
     return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
   };
 
+  const progressPercentage = (currentTime / (currentEpisode?.duration || 1)) * 100;
+  const volumePercentage = volume * 100;
+
+  // Tilt effect for cover art based on mouse position
+  const coverTiltStyle = {
+    transform: `perspective(1000px) rotateY(${mousePosition.x * 5}deg) rotateX(${-mousePosition.y * 5}deg)`
+  };
+
   return (
     <section className={styles.podcastSection} id="podcast">
-      <div className={styles.container}>
-      <div className={styles.sectionHeader}>
-        <h2 className={styles.sectionTitle}>🎙️ Engineering Podcast</h2>
-        <p className={styles.sectionSubtitle}>Deep dives into software architecture, development practices, and tech trends</p>
+      {/* Luxury Background Elements */}
+      <div className={styles.luxuryBackground}>
+        <canvas ref={canvasRef} className={styles.particleCanvas} />
+        <div className={styles.luxuryAccent} style={{
+          transform: `translate(${mousePosition.x * 30}px, ${mousePosition.y * 30}px)`
+        }}></div>
       </div>
 
-      {currentEpisode && (
-        <div className={styles.currentEpisode}>
-          <div className={styles.episodeCover}>
-            <img
-              src={currentEpisode.coverImage}
-              alt={currentEpisode.title}
-              className={styles.coverImage}
-              loading="lazy"
-            />
-          </div>
+      <div className={styles.container}>
+        {/* Section Header */}
+        <div className={styles.sectionHeader}>
+          <span className={styles.sectionLabel}>PREMIUM CONTENT</span>
+          <h2 className={styles.sectionTitle}>
+            <span className={styles.titleLine}>Engineering</span>
+            <span className={styles.titleLine}>
+              <span className={styles.titleAccent}>Insights</span>
+              <span className={styles.titleDot}>.</span>
+            </span>
+          </h2>
+          <p className={styles.sectionSubtitle}>
+            Expert conversations about software architecture, development practices, and emerging technologies
+          </p>
+        </div>
 
-          <div className={styles.episodeContent}>
-            <div className={styles.episodeHeader}>
-              <span className={styles.episodeDate}>
-                {new Date(currentEpisode.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
-              </span>
-              <h3 className={styles.episodeTitle}>{currentEpisode.title}</h3>
-              <p className={styles.episodeDescription}>{currentEpisode.description}</p>
+        {/* Main Content */}
+        <div className={styles.mainContent}>
+          {/* Current Episode Player */}
+          <div className={styles.currentEpisode}>
+            {/* Cover Art with Luxury Badge */}
+            <div className={styles.coverArtContainer}>
+              <div className={styles.coverArt} style={coverTiltStyle}>
+                <img
+                  src={currentEpisode.coverImage}
+                  alt={currentEpisode.title}
+                  className={styles.coverImage}
+                  loading="lazy"
+                />
+                <div className={styles.coverOverlay}></div>
+              </div>
+              <div className={styles.luxuryBadge}>
+                <span>Premium</span>
+                <span>Episode</span>
+              </div>
             </div>
 
-            <div className={styles.audioPlayer}>
-              <audio
-                ref={audioRef}
-                src={currentEpisode.audioUrl}
-                onTimeUpdate={handleTimeUpdate}
-                onEnded={() => setIsPlaying(false)}
-                onLoadedMetadata={handleTimeUpdate}
-              />
-
-              <div className={styles.playerControls}>
-                <button
-                  className={styles.playButton}
-                  onClick={handlePlayPause}
-                  aria-label={isPlaying ? 'Pause' : 'Play'}
-                >
-                  {isPlaying ? (
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                      <rect x="6" y="4" width="4" height="16" />
-                      <rect x="14" y="4" width="4" height="16" />
-                    </svg>
-                  ) : (
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
+            {/* Episode Content */}
+            <div className={styles.episodeContent}>
+              <div className={styles.episodeHeader}>
+                <div className={styles.episodeMeta}>
+                  <span className={styles.episodeNumber}>{currentEpisode.id.toUpperCase()}</span>
+                  <span className={styles.episodeDate}>
+                    {new Date(currentEpisode.date).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric'
+                    })}
+                  </span>
+                  <span className={styles.episodeDuration}>{formatTime(currentEpisode.duration)}</span>
+                </div>
+                
+                <h3 className={styles.episodeTitle}>{currentEpisode.title}</h3>
+                
+                <div className={styles.tagContainer}>
+                  {currentEpisode.tags.map((tag, index) => (
+                    <span key={index} className={styles.tag}>{tag}</span>
+                  ))}
+                </div>
+                
+                <p className={styles.episodeDescription}>
+                  {isExpanded 
+                    ? currentEpisode.description 
+                    : `${currentEpisode.description.substring(0, 150)}${currentEpisode.description.length > 150 ? '...' : ''}`
+                  }
+                  {currentEpisode.description.length > 150 && (
+                    <button 
+                      className={styles.readMoreButton} 
+                      onClick={() => setIsExpanded(!isExpanded)}
+                    >
+                      {isExpanded ? 'Show less' : 'Read more'}
+                    </button>
                   )}
-                </button>
+                </p>
+              </div>
 
-                <div className={styles.progressContainer}>
-                  <input
-                    type="range"
-                    min="0"
-                    max={duration || 0}
-                    value={currentTime}
-                    onChange={handleSeek}
-                    className={styles.progressBar}
-                    style={{
-                      '--progress-color': 'var(--primary-color)',
-                      '--track-color': 'var(--secondary-color)'
-                    }}
-                  />
-                  <div className={styles.timeDisplay}>
-                    <span>{formatTime(currentTime)}</span>
-                    <span>{formatTime(duration)}</span>
+              {/* Luxury Audio Player */}
+              <div className={styles.audioPlayer}>
+                <audio
+                  ref={audioRef}
+                  src={currentEpisode.audioUrl}
+                  onTimeUpdate={handleTimeUpdate}
+                  onEnded={() => setIsPlaying(false)}
+                  onLoadedMetadata={handleTimeUpdate}
+                />
+
+                <div className={styles.playerControls}>
+                  <div className={styles.progressContainer}>
+                    <div className={styles.progressBarBackground}>
+                      <div 
+                        className={styles.progressBarFill} 
+                        style={{ width: `${progressPercentage}%` }}
+                      ></div>
+                    </div>
+                    <input
+                      type="range"
+                      min="0"
+                      max={currentEpisode.duration || 0}
+                      value={currentTime}
+                      onChange={handleSeek}
+                      className={styles.progressInput}
+                    />
+                    <div className={styles.timeDisplay}>
+                      <span>{formatTime(currentTime)}</span>
+                      <span>{formatTime(currentEpisode.duration)}</span>
+                    </div>
+                  </div>
+
+                  <div className={styles.controlButtons}>
+                    <div className={styles.primaryControls}>
+                      <button 
+                        className={styles.skipButton}
+                        onClick={skipBackward}
+                        aria-label="Skip backward 15 seconds"
+                      >
+                        <FiSkipBack size={20} />
+                      </button>
+                      
+                      <button
+                        className={styles.playButton}
+                        onClick={handlePlayPause}
+                        aria-label={isPlaying ? 'Pause' : 'Play'}
+                      >
+                        {isPlaying ? <FiPause size={24} /> : <FiPlay size={24} />}
+                      </button>
+                      
+                      <button 
+                        className={styles.skipButton}
+                        onClick={skipForward}
+                        aria-label="Skip forward 15 seconds"
+                      >
+                        <FiSkipForward size={20} />
+                      </button>
+                    </div>
+
+                    <div className={styles.secondaryControls}>
+                      <div className={styles.volumeControl}>
+                        <FiVolume2 size={18} />
+                        <input
+                          type="range"
+                          min="0"
+                          max="1"
+                          step="0.01"
+                          value={volume}
+                          onChange={handleVolumeChange}
+                          className={styles.volumeSlider}
+                          style={{
+                            '--volume-level': `${volumePercentage}%`
+                          }}
+                        />
+                      </div>
+
+                      <div className={styles.speedControl}>
+                        <button 
+                          className={styles.speedButton}
+                          onClick={() => setShowSpeedControls(!showSpeedControls)}
+                        >
+                          <RiSpeedLine size={18} />
+                          <span>{playbackRate}x</span>
+                        </button>
+                        
+                        {showSpeedControls && (
+                          <div className={styles.speedOptions}>
+                            {[0.5, 0.75, 1, 1.25, 1.5, 2].map((rate) => (
+                              <button
+                                key={rate}
+                                className={`${styles.speedOption} ${playbackRate === rate ? styles.active : ''}`}
+                                onClick={() => handlePlaybackRateChange(rate)}
+                              >
+                                {rate}x
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className={styles.platformLinks}>
-              <p className={styles.availableOn}>Available on:</p>
-              <div className={styles.platformIcons}>
-                <Link to={currentEpisode.platforms.spotify} target="_blank" rel="noopener noreferrer">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.56 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
-                  </svg>
-                </Link>
-                <Link to={currentEpisode.platforms.apple} target="_blank" rel="noopener noreferrer">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-                  </svg>
-                </Link>
-                <Link to={currentEpisode.platforms.google} target="_blank" rel="noopener noreferrer">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm6.35 15.54c-1.16.77-2.65 1.15-4.6 1.15-2.5 0-4.6-.8-6.3-2.4-1.7-1.6-2.55-3.6-2.55-6.1 0-2.5.85-4.6 2.55-6.2 1.7-1.6 3.8-2.4 6.3-2.4 3.65 0 6.05 1.55 7.2 2.75l-2.95 2.9c-.65-.65-1.85-1.35-4.25-1.35-2.15 0-3.95.8-5.25 2.1-1.3 1.3-2 3.05-2 5.2 0 2.15.7 3.95 2 5.25 1.3 1.3 3.1 2 5.25 2 2.45 0 4.15-.8 5.35-2.05 1.2-1.25 1.5-2.65 1.5-3.55 0-.8-.25-1.45-.55-1.95h-6.3v-3.9h10.2c.1.5.15 1.05.15 1.55 0 2.05-.7 4.35-2.45 5.95z" />
-                  </svg>
-                </Link>
+              {/* Platform Links */}
+              <div className={styles.platformLinks}>
+                <p className={styles.availableOn}>Also available on:</p>
+                <div className={styles.platformIcons}>
+                  <a href={currentEpisode.platforms.spotify} target="_blank" rel="noopener noreferrer" className={styles.platformLink}>
+                    <FaSpotify size={24} />
+                    <span>Spotify</span>
+                  </a>
+                  <a href={currentEpisode.platforms.apple} target="_blank" rel="noopener noreferrer" className={styles.platformLink}>
+                    <FaApple size={24} />
+                    <span>Apple</span>
+                  </a>
+                  <a href={currentEpisode.platforms.google} target="_blank" rel="noopener noreferrer" className={styles.platformLink}>
+                    <FaGooglePlay size={24} />
+                    <span>Google</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
 
-      <div className={styles.episodeList}>
-        <h4 className={styles.listTitle}>Recent Episodes</h4>
-        <ul className={styles.episodes}>
-          {episodes.slice(0, 4).map((episode) => (
-            <li
-              key={episode.id}
-              className={`${styles.episodeItem} ${currentEpisode?.id === episode.id ? styles.active : ''}`}
-              onClick={() => {
-                setCurrentEpisode(episode);
-                setIsPlaying(false);
-              }}
-            >
-              <div className={styles.episodeItemCover}>
-                <img
-                  src={episode.coverImage}
-                  alt={episode.title}
-                  loading="lazy"
-                />
-              </div>
-              <div className={styles.episodeItemInfo}>
-                <h5>{episode.title}</h5>
-                <div className={styles.episodeMeta}>
-                  <span>{new Date(episode.date).toLocaleDateString()}</span>
-                  <span>{episode.duration}</span>
+          {/* Episode Navigation */}
+          <div className={styles.episodeNavigation}>
+            <div className={styles.tabs}>
+              <button 
+                className={`${styles.tab} ${activeTab === 'featured' ? styles.active : ''}`}
+                onClick={() => setActiveTab('featured')}
+              >
+                Featured
+              </button>
+              <button 
+                className={`${styles.tab} ${activeTab === 'all' ? styles.active : ''}`}
+                onClick={() => setActiveTab('all')}
+              >
+                All Episodes
+              </button>
+            </div>
+
+            <div className={styles.episodeList}>
+              {(activeTab === 'featured' ? episodes.filter(ep => ep.featured) : episodes).map((episode) => (
+                <div
+                  key={episode.id}
+                  className={`${styles.episodeCard} ${currentEpisode.id === episode.id ? styles.active : ''}`}
+                  onClick={() => {
+                    setCurrentEpisode(episode);
+                    setIsPlaying(false);
+                  }}
+                >
+                  <div className={styles.cardImage}>
+                    <img
+                      src={episode.coverImage}
+                      alt={episode.title}
+                      loading="lazy"
+                    />
+                    {currentEpisode.id === episode.id && (
+                      <div className={styles.nowPlaying}>
+                        {isPlaying ? 'NOW PLAYING' : 'SELECTED'}
+                      </div>
+                    )}
+                  </div>
+                  <div className={styles.cardContent}>
+                    <h5 className={styles.cardTitle}>{episode.title}</h5>
+                    <div className={styles.cardMeta}>
+                      <span>{new Date(episode.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+                      <span>•</span>
+                      <span>{formatTime(episode.duration)}</span>
+                    </div>
+                    <div className={styles.cardTags}>
+                      {episode.tags.slice(0, 2).map((tag, index) => (
+                        <span key={index} className={styles.tag}>{tag}</span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
-      <div className={styles.ctaContainer}>
-        <Link to="/podcast" className={styles.primaryButton}>
-          Browse All Episodes
-        </Link>
-        <Link to='/subscribe' className={styles.secondaryButton}>
-          Subscribe
-        </Link>
-      </div>
+        {/* Subscription CTA */}
+        <div className={styles.subscriptionCta}>
+          <div className={styles.ctaContent}>
+            <h3 className={styles.ctaTitle}>Never miss an episode</h3>
+            <p className={styles.ctaText}>Subscribe to get new episodes delivered automatically to your favorite podcast app</p>
+            <div className={styles.ctaButtons}>
+              <a href="/subscribe" className={styles.primaryButton}>
+                <span>Subscribe Now</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+              <a href="/podcast" className={styles.secondaryButton}>
+                <span>Browse All Episodes</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M8 7L12 11L16 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
 
 export default PodcastSection;
+
