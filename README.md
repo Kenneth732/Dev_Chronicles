@@ -98,7 +98,7 @@ Dev Chronicles is a reflection on:
 
 ## 📸 Screenshots
 
-> <img src="../port_blog/src/assets/dev-chronicles.png" />
+> <img src="https://media.licdn.com/dms/image/v2/D4D22AQEKWEzggPhXvA/feedshare-shrink_2048_1536/B4DZd844eZHAAo-/0/1750146976716?e=1753315200&v=beta&t=P9_vBeTkZr9ruXlxXj0QrOob7g_zPHCFm0ESJCBsB5g" />
 
 ---
 
@@ -113,7 +113,7 @@ Fork the repo → make changes → submit a pull request.
 
 **Dr Codewell**
 🧠 Full-Stack Engineer | 📜 Philosophical Coder
-🔗 [LinkedIn](https://linkedin.com/in/YOUR_PROFILE)
+🔗 [LinkedIn](https://www.linkedin.com/in/kenneth-mburu/)
 🌐 [Dev Chronicles](https://dev-chronicles.vercel.app)
 
 ---
