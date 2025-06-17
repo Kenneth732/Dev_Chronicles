@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://dev-chronicles.vercel.app/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://dev-chronicles.vercel.app/about</loc>
+  </url>
+  <url>
+    <loc>https://dev-chronicles.vercel.app/backend</loc>
+  </url>
+  <url>
+    <loc>https://dev-chronicles.vercel.app/devops</loc>
+  </url>
+  <url>
+    <loc>https://dev-chronicles.vercel.app/architecture</loc>
+  </url>
+</urlset>
