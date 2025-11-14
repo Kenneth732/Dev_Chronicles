@@ -11,7 +11,6 @@ const AboutPage = () => {
   const animationRef = useRef(null);
   const aboutRef = useRef(null);
 
-
   // Animated stats counter
   useEffect(() => {
     const duration = 2000;
@@ -161,24 +160,24 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className={styles.aboutPage} ref={aboutRef}>
+    <div className={styles.AboutPage} ref={aboutRef}>
       {/* Interactive Canvas Background */}
-      <canvas ref={canvasRef} className={styles.canvasBackground} />
+      <canvas ref={canvasRef} className={styles.AboutCanvasBackground} />
 
       {/* Hero Section */}
-      <section className={styles.hero}>
-        <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>
-            <span className={styles.titleLine}>Building The</span>
-            <span className={styles.titleLine}>
-              <span className={styles.titleAccent}>Digital Future</span>
-              <span className={styles.titleDot}>.</span>
+      <section className={styles.AboutHero}>
+        <div className={styles.AboutHeroContent}>
+          <h1 className={styles.AboutHeroTitle}>
+            <span className={styles.AboutTitleLine}>Building The</span>
+            <span className={styles.AboutTitleLine}>
+              <span className={styles.AboutTitleAccent}>Digital Future</span>
+              <span className={styles.AboutTitleDot}>.</span>
             </span>
           </h1>
-          <p className={styles.heroSubtitle}>
+          <p className={styles.AboutHeroSubtitle}>
             We combine technical excellence with creative vision to craft digital experiences that matter.
           </p>
-          <Link to="/contact" className={styles.ctaButton}>
+          <Link to="/contact" className={styles.AboutCtaButton}>
             <span>Let's Build Together</span>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -186,39 +185,36 @@ const AboutPage = () => {
           </Link>
         </div>
 
-
-        <div className={styles.heroImage}>
+        <div className={styles.AboutHeroImage}>
           <img
-            src="https://i.pinimg.com/736x/28/41/ec/2841ec6a53ec7d609de8a60d9f9214e1.jpg" // Your image path here
+            src="https://i.pinimg.com/736x/28/41/ec/2841ec6a53ec7d609de8a60d9f9214e1.jpg"
             alt="Our team working together"
-            className={styles.articleImage}
+            className={styles.AboutArticleImage}
           />
-          <div className={styles.imageOverlay}></div>
+          <div className={styles.AboutImageOverlay}></div>
         </div>
-
-
       </section>
 
       {/* Mission Statement */}
-      <section className={styles.mission}>
-        <div className={styles.missionContent}>
-          <h2 className={styles.sectionTitle}>
-            <span className={styles.titleNumber}>01</span>
+      <section className={styles.AboutMission}>
+        <div className={styles.AboutMissionContent}>
+          <h2 className={styles.AboutSectionTitle}>
+            <span className={styles.AboutTitleNumber}>01</span>
             Our Philosophy
           </h2>
-          <div className={styles.missionGrid}>
-            <div className={styles.missionCard}>
-              <div className={styles.cardIcon}>💡</div>
+          <div className={styles.AboutMissionGrid}>
+            <div className={styles.AboutMissionCard}>
+              <div className={styles.AboutCardIcon}>💡</div>
               <h3>Innovate Fearlessly</h3>
               <p>We embrace emerging technologies and unconventional thinking to solve problems in new ways.</p>
             </div>
-            <div className={styles.missionCard}>
-              <div className={styles.cardIcon}>🧩</div>
+            <div className={styles.AboutMissionCard}>
+              <div className={styles.AboutCardIcon}>🧩</div>
               <h3>Engineer Elegantly</h3>
               <p>Beautiful code is as important as beautiful design in everything we create.</p>
             </div>
-            <div className={styles.missionCard}>
-              <div className={styles.cardIcon}>🌱</div>
+            <div className={styles.AboutMissionCard}>
+              <div className={styles.AboutCardIcon}>🌱</div>
               <h3>Grow Sustainably</h3>
               <p>We build solutions designed to evolve and scale with your business needs.</p>
             </div>
@@ -227,74 +223,74 @@ const AboutPage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className={styles.stats}>
-        <div className={styles.statsContainer}>
-          <div className={styles.statItem}>
-            <span className={styles.statNumber}>{stats.years}+</span>
-            <span className={styles.statLabel}>Years of Excellence</span>
+      <section className={styles.AboutStats}>
+        <div className={styles.AboutStatsContainer}>
+          <div className={styles.AboutStatItem}>
+            <span className={styles.AboutStatNumber}>{stats.years}+</span>
+            <span className={styles.AboutStatLabel}>Years of Excellence</span>
           </div>
-          <div className={styles.statItem}>
-            <span className={styles.statNumber}>{stats.clients}+</span>
-            <span className={styles.statLabel}>Satisfied Clients</span>
+          <div className={styles.AboutStatItem}>
+            <span className={styles.AboutStatNumber}>{stats.clients}+</span>
+            <span className={styles.AboutStatLabel}>Satisfied Clients</span>
           </div>
-          <div className={styles.statItem}>
-            <span className={styles.statNumber}>{stats.projects}+</span>
-            <span className={styles.statLabel}>Successful Projects</span>
+          <div className={styles.AboutStatItem}>
+            <span className={styles.AboutStatNumber}>{stats.projects}+</span>
+            <span className={styles.AboutStatLabel}>Successful Projects</span>
           </div>
         </div>
       </section>
 
       {/* Timeline Section */}
-      <section className={styles.timelineSection}>
-        <h2 className={styles.sectionTitle}>
-          <span className={styles.titleNumber}>02</span>
+      <section className={styles.AboutTimelineSection}>
+        <h2 className={styles.AboutSectionTitle}>
+          <span className={styles.AboutTitleNumber}>02</span>
           Our Journey
         </h2>
-        <div className={styles.timelineContainer}>
+        <div className={styles.AboutTimelineContainer}>
           {timelineData.map((item, index) => (
             <div
               key={index}
-              className={`${styles.timelineItem} ${activeTimelineItem === index ? styles.active : ''}`}
+              className={`${styles.AboutTimelineItem} ${activeTimelineItem === index ? styles.AboutActive : ''}`}
               onClick={() => setActiveTimelineItem(index)}
             >
-              <div className={styles.timelineDot}></div>
-              <div className={styles.timelineContent}>
-                <span className={styles.timelineYear}>{item.year}</span>
-                <h3 className={styles.timelineTitle}>{item.title}</h3>
-                <p className={styles.timelineDescription}>{item.description}</p>
+              <div className={styles.AboutTimelineDot}></div>
+              <div className={styles.AboutTimelineContent}>
+                <span className={styles.AboutTimelineYear}>{item.year}</span>
+                <h3 className={styles.AboutTimelineTitle}>{item.title}</h3>
+                <p className={styles.AboutTimelineDescription}>{item.description}</p>
               </div>
             </div>
           ))}
-          <div className={styles.timelineLine}></div>
+          <div className={styles.AboutTimelineLine}></div>
         </div>
       </section>
 
       {/* Team Section */}
-      <section className={styles.team}>
-        <h2 className={styles.sectionTitle}>
-          <span className={styles.titleNumber}>03</span>
+      <section className={styles.AboutTeam}>
+        <h2 className={styles.AboutSectionTitle}>
+          <span className={styles.AboutTitleNumber}>03</span>
           Meet The Team
         </h2>
-        <div className={styles.teamGrid}>
+        <div className={styles.AboutTeamGrid}>
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className={styles.teamCard}
+              className={styles.AboutTeamCard}
               onMouseEnter={() => setTeamHovered(index)}
               onMouseLeave={() => setTeamHovered(null)}
             >
-              <div className={styles.cardImage}>
+              <div className={styles.AboutCardImage}>
                 <img src={member.image} alt={member.name} />
-                <div className={`${styles.cardOverlay} ${teamHovered === index ? styles.active : ''}`}></div>
+                <div className={`${styles.AboutCardOverlay} ${teamHovered === index ? styles.AboutActive : ''}`}></div>
               </div>
-              <div className={styles.cardContent}>
+              <div className={styles.AboutCardContent}>
                 <h3>{member.name}</h3>
-                <p className={styles.role}>{member.role}</p>
-                <p className={styles.expertise}>{member.expertise}</p>
+                <p className={styles.AboutRole}>{member.role}</p>
+                <p className={styles.AboutExpertise}>{member.expertise}</p>
                 {teamHovered === index && (
-                  <div className={styles.cardHoverContent}>
-                    <p className={styles.funFact}>Fun fact: {member.funFact}</p>
-                    <div className={styles.socialLinks}>
+                  <div className={styles.AboutCardHoverContent}>
+                    <p className={styles.AboutFunFact}>Fun fact: {member.funFact}</p>
+                    <div className={styles.AboutSocialLinks}>
                       <Link to="#" aria-label={`${member.name} Twitter`}>𝕏</Link>
                       <Link to="#" aria-label={`${member.name} LinkedIn`}>in</Link>
                     </div>
@@ -307,28 +303,28 @@ const AboutPage = () => {
       </section>
 
       {/* Values Section */}
-      <section className={styles.values}>
-        <h2 className={styles.sectionTitle}>
-          <span className={styles.titleNumber}>04</span>
+      <section className={styles.AboutValues}>
+        <h2 className={styles.AboutSectionTitle}>
+          <span className={styles.AboutTitleNumber}>04</span>
           Our Core Values
         </h2>
-        <div className={styles.valuesContainer}>
-          <div className={styles.valueColumn}>
-            <div className={styles.valueItem}>
+        <div className={styles.AboutValuesContainer}>
+          <div className={styles.AboutValueColumn}>
+            <div className={styles.AboutValueItem}>
               <h3>01. Integrity First</h3>
               <p>We believe in radical transparency and doing what's right, even when no one is looking.</p>
             </div>
-            <div className={styles.valueItem}>
+            <div className={styles.AboutValueItem}>
               <h3>02. Craftsmanship</h3>
               <p>We take pride in our work and sweat the details that others overlook.</p>
             </div>
           </div>
-          <div className={styles.valueColumn}>
-            <div className={styles.valueItem}>
+          <div className={styles.AboutValueColumn}>
+            <div className={styles.AboutValueItem}>
               <h3>03. Continuous Learning</h3>
               <p>We maintain a growth mindset and invest heavily in team development.</p>
             </div>
-            <div className={styles.valueItem}>
+            <div className={styles.AboutValueItem}>
               <h3>04. Human-Centered</h3>
               <p>Technology should serve people, not the other way around.</p>
             </div>
@@ -337,17 +333,17 @@ const AboutPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className={styles.ctaSection}>
-        <div className={styles.ctaContainer}>
-          <h2 className={styles.ctaTitle}>Ready to Build Something Amazing?</h2>
-          <p className={styles.ctaText}>
+      <section className={styles.AboutCtaSection}>
+        <div className={styles.AboutCtaContainer}>
+          <h2 className={styles.AboutCtaTitle}>Ready to Build Something Amazing?</h2>
+          <p className={styles.AboutCtaText}>
             Whether you have a fully-formed vision or just a spark of an idea, we'd love to help bring it to life.
           </p>
-          <div className={styles.ctaButtons}>
-            <Link to="/contact" className={styles.primaryCta}>
+          <div className={styles.AboutCtaButtons}>
+            <Link to="/contact" className={styles.AboutPrimaryCta}>
               Start a Project
             </Link>
-            <Link to="/careers" className={styles.secondaryCta}>
+            <Link to="/careers" className={styles.AboutSecondaryCta}>
               Join Our Team
             </Link>
           </div>

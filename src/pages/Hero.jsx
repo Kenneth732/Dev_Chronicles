@@ -3,8 +3,9 @@
 import React, { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import styles from '../styles/Hero.module.css';
 import { Link } from 'react-router-dom';
+
 const Hero = () => {
-  // Refs
+  // Refs 
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const ctaRef = useRef(null);
@@ -28,29 +29,29 @@ const Hero = () => {
 
   // Full code to display
   const fullCode = useMemo(() => (
-    `<span class="${styles.comment}">// Premium Engineering Solutions</span>
-<span class="${styles.import}">import</span> { elegance } <span class="${styles.import}">from</span> <span class="${styles.string}">'@luxury/design'</span>;
-<span class="${styles.import}">import</span> { performance } <span class="${styles.import}">from</span> <span class="${styles.string}">'@enterprise/scale'</span>;
+    `<span class="${styles.HeroComment}">// Premium Engineering Solutions</span>
+<span class="${styles.HeroImport}">import</span> { elegance } <span class="${styles.HeroImport}">from</span> <span class="${styles.HeroString}">'@luxury/design'</span>;
+<span class="${styles.HeroImport}">import</span> { performance } <span class="${styles.HeroImport}">from</span> <span class="${styles.HeroString}">'@enterprise/scale'</span>;
 
-<span class="${styles.keyword}">class</span> <span class="${styles.className}">DigitalMasterpiece</span> {
-  <span class="${styles.method}">constructor</span>() {
-    <span class="${styles.keyword}">this</span>.<span class="${styles.property}">craftsmanship</span> = <span class="${styles.string}">'impeccable'</span>;
-    <span class="${styles.keyword}">this</span>.<span class="${styles.property}">performance</span> = <span class="${styles.string}">'flawless'</span>;
-    <span class="${styles.keyword}">this</span>.<span class="${styles.property}">design</span> = <span class="${styles.string}">'timeless'</span>;
+<span class="${styles.HeroKeyword}">class</span> <span class="${styles.HeroClassName}">DigitalMasterpiece</span> {
+  <span class="${styles.HeroMethod}">constructor</span>() {
+    <span class="${styles.HeroKeyword}">this</span>.<span class="${styles.HeroProperty}">craftsmanship</span> = <span class="${styles.HeroString}">'impeccable'</span>;
+    <span class="${styles.HeroKeyword}">this</span>.<span class="${styles.HeroProperty}">performance</span> = <span class="${styles.HeroString}">'flawless'</span>;
+    <span class="${styles.HeroKeyword}">this</span>.<span class="${styles.HeroProperty}">design</span> = <span class="${styles.HeroString}">'timeless'</span>;
   }
 
-  <span class="${styles.method}">deploy</span>() {
-    <span class="${styles.keyword}">return</span> <span class="${styles.keyword}">new</span> <span class="${styles.className}">Promise</span>((resolve) => {
-      <span class="${styles.className}">setTimeout</span>(() => resolve({
-        <span class="${styles.property}">uptime</span>: <span class="${styles.string}">'99.999%'</span>,
-        <span class="${styles.property}">latency</span>: <span class="${styles.string}">'<10ms'</span>,
-        <span class="${styles.property}">security</span>: <span class="${styles.string}">'zero-trust'</span>
+  <span class="${styles.HeroMethod}">deploy</span>() {
+    <span class="${styles.HeroKeyword}">return</span> <span class="${styles.HeroKeyword}">new</span> <span class="${styles.HeroClassName}">Promise</span>((resolve) => {
+      <span class="${styles.HeroClassName}">setTimeout</span>(() => resolve({
+        <span class="${styles.HeroProperty}">uptime</span>: <span class="${styles.HeroString}">'99.999%'</span>,
+        <span class="${styles.HeroProperty}">latency</span>: <span class="${styles.HeroString}">'<10ms'</span>,
+        <span class="${styles.HeroProperty}">security</span>: <span class="${styles.HeroString}">'zero-trust'</span>
       }), 0);
     });
   }
 }
 
-<span class="${styles.export}">export default</span> <span class="${styles.keyword}">new</span> <span class="${styles.className}">DigitalMasterpiece</span>();`
+<span class="${styles.HeroExport}">export default</span> <span class="${styles.HeroKeyword}">new</span> <span class="${styles.HeroClassName}">DigitalMasterpiece</span>();`
   ), []);
 
   // Animate counting numbers
@@ -130,7 +131,7 @@ const Hero = () => {
     
     // Animate the underline after title appears
     if (titleRef.current) {
-      const underline = titleRef.current.querySelector(`.${styles.titleUnderline}`);
+      const underline = titleRef.current.querySelector(`.${styles.HeroTitleUnderline}`);
       if (underline) {
         setTimeout(() => {
           underline.style.opacity = '1';
@@ -247,7 +248,7 @@ const Hero = () => {
   const addFinalCursor = useCallback(() => {
     if (codeRef.current) {
       const cursor = document.createElement('span');
-      cursor.className = styles.codeCursor;
+      cursor.className = styles.HeroCodeCursor;
       codeRef.current.appendChild(cursor);
     }
   }, []);
@@ -276,108 +277,94 @@ const Hero = () => {
   };
 
   return (
-    <section className={styles.hero} ref={heroRef}>
+    <section className={styles.Hero} ref={heroRef}>
       {/* Interactive Particles Background */}
-      <div ref={particlesRef} className={styles.particlesContainer}>
-        <canvas ref={canvasRef} className={styles.particlesCanvas} />
+      <div ref={particlesRef} className={styles.HeroParticlesContainer}>
+        <canvas ref={canvasRef} className={styles.HeroParticlesCanvas} />
       </div>
       
       {/* Gradient Accent */}
-      <div className={styles.luxuryAccent} style={{
+      <div className={styles.HeroLuxuryAccent} style={{
         transform: `translate(${mousePosition.x * 30}px, ${mousePosition.y * 30}px)`
       }}></div>
 
-      {/* Floating Stats */}
-      <div className={styles.floatingStats}>
-        <div className={styles.statItem}>
-          <span className={styles.statNumber}>{stats.projects}+</span>
-          <span className={styles.statLabel}>Projects</span>
-        </div>
-        <div className={styles.statItem}>
-          <span className={styles.statNumber}>{stats.clients}+</span>
-          <span className={styles.statLabel}>Clients</span>
-        </div>
-        <div className={styles.statItem}>
-          <span className={styles.statNumber}>{stats.years}</span>
-          <span className={styles.statLabel}>Years</span>
-        </div>
-      </div>
-
-      <div className={styles.heroContent}>
+      <div className={styles.HeroContent}>
         {/* Text Content */}
-        <div className={styles.textContainer} style={parallaxStyle}>
-          <div className={styles.titleWrapper}>
-            <h1 ref={titleRef} className={styles.title}>
-              <span className={styles.titleLine}>Crafting Digital</span>
-              <span className={styles.titleLine}>
-                <span className={styles.titleAccent}>Excellence</span>
-                <span className={styles.titleDot}>.</span>
+        <div className={styles.HeroTextContainer} style={parallaxStyle}>
+          <div className={styles.HeroTitleWrapper}>
+            <h1 ref={titleRef} className={styles.HeroTitle}>
+              <span className={styles.HeroTitleLine}>Crafting Digital</span>
+              <span className={styles.HeroTitleLine}>
+                <span className={styles.HeroTitleAccent}>Excellence</span>
+                <span className={styles.HeroTitleDot}>.</span>
               </span>
             </h1>
-            <div className={styles.titleUnderline}></div>
+            <div className={styles.HeroTitleUnderline}></div>
           </div>
 
-          <p ref={subtitleRef} className={styles.subtitle}>
-            <span className={styles.subtitleHighlight}>
+          <p ref={subtitleRef} className={styles.HeroSubtitle}>
+            <span className={styles.HeroSubtitleHighlight}>
               {stats.years}+ years
             </span> of engineering mastery distilled into premium solutions
           </p>
+          
 
-          <div ref={ctaRef} className={styles.ctaContainer}>
-            <Link to="/featured" className={styles.primaryCta} aria-label="Explore our work">
+          <div ref={ctaRef} className={styles.HeroCtaContainer}>
+            <Link to="/featured" className={styles.HeroPrimaryCta} aria-label="Explore our work">
               <span>Explore Our Work</span>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
-            <Link to="/contact" className={styles.secondaryCta} aria-label="Request consultation">
+            <Link to="/contact" className={styles.HeroSecondaryCta} aria-label="Request consultation">
               <span>Request Consultation</span>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M8 7L12 11L16 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
           </div>
+          
 
-          <div className={styles.signature}>
-            <div className={styles.signatureLine}></div>
-            <div className={styles.signatureText}>EST. 2012</div>
+          <div className={styles.HeroSignature}>
+            <div className={styles.HeroSignatureLine}></div>
+            <div className={styles.HeroSignatureText}>EST. 2012</div>
           </div>
         </div>
 
         {/* Interactive Code Display */}
-        <div className={styles.graphicContainer}>
-          <div className={styles.luxuryBadge}>
+        <div className={styles.HeroGraphicContainer}>
+          <div className={styles.HeroLuxuryBadge}>
             <span>Premium</span>
             <span>Edition</span>
           </div>
 
-          <div className={styles.codeWindow} style={codeWindowTilt}>
-            <div className={styles.windowHeader}>
-              <div className={styles.windowControls}>
-                <span className={styles.controlDot} style={{ backgroundColor: '#FF5F56' }}></span>
-                <span className={styles.controlDot} style={{ backgroundColor: '#FFBD2E' }}></span>
-                <span className={styles.controlDot} style={{ backgroundColor: '#27C93F' }}></span>
+          <div className={styles.HeroCodeWindow} style={codeWindowTilt}>
+            <div className={styles.HeroWindowHeader}>
+              <div className={styles.HeroWindowControls}>
+                <span className={styles.HeroControlDot} style={{ backgroundColor: '#FF5F56' }}></span>
+                <span className={styles.HeroControlDot} style={{ backgroundColor: '#FFBD2E' }}></span>
+                <span className={styles.HeroControlDot} style={{ backgroundColor: '#27C93F' }}></span>
               </div>
-              <div className={styles.windowTitle}>architecture.js</div>
-              <div className={styles.windowDecoration}></div>
+              <div className={styles.HeroWindowTitle}>architecture.js</div>
+              <div className={styles.HeroWindowDecoration}></div>
             </div>
-            <div className={styles.codeContent}>
-              <pre className={styles.codeBlock} ref={codeRef}>
+            <div className={styles.HeroCodeContent}>
+              <pre className={styles.HeroCodeBlock} ref={codeRef}>
                 <code dangerouslySetInnerHTML={{ __html: fullCode.substring(0, currentIndex) }} />
-                {!isTypingComplete && <span className={styles.typingCursor}>|</span>}
+                {!isTypingComplete && <span className={styles.HeroTypingCursor}>|</span>}
               </pre>
             </div>
           </div>
 
-          <div className={styles.glowEffect}></div>
-          <div className={styles.reflection}></div>
+          <div className={styles.HeroGlowEffect}></div>
+          <div className={styles.HeroReflection}></div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className={styles.scrollIndicator} style={{ opacity: 1 - scrollProgress * 2 }}>
-        <span className={styles.scrollText}>Discover More</span>
-        <div className={styles.scrollLine}></div>
+      <div className={styles.HeroScrollIndicator} style={{ opacity: 1 - scrollProgress * 2 }}>
+        <span className={styles.HeroScrollText}>Discover More</span>
+        <div className={styles.HeroScrollLine}></div>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path d="M7 10L12 15L17 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>

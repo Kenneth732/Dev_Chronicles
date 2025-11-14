@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   padding: 120px 24px;
-  max-width: 1800px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -43,8 +43,15 @@
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
 }
 
 .heroSubtitle {
@@ -94,7 +101,7 @@
 /* Section Styles */
 .section {
   padding: 100px 24px;
-  max-width: 1800px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -503,7 +510,7 @@
   border-radius: 24px;
   padding: 80px 24px;
   margin: 60px auto;
-  max-width: 1800px;
+  max-width: 1400px;
 }
 
 .ctaContent {
@@ -567,21 +574,21 @@
     text-align: center;
     padding: 80px 24px;
   }
-  
+
   .heroContent {
     padding-right: 0;
     margin-bottom: 60px;
   }
-  
+
   .heroSubtitle {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .heroStats {
     justify-content: center;
   }
-  
+
   .sectionHeader {
     flex-direction: column;
     align-items: flex-start;
@@ -593,7 +600,7 @@
   .caseStudiesGrid {
     grid-template-columns: 1fr;
   }
-  
+
   .heroIllustration {
     min-width: auto;
   }
@@ -604,11 +611,11 @@
     flex-direction: column;
     gap: 30px;
   }
-  
+
   .ctaButtons {
     flex-direction: column;
   }
-  
+
   .ctaButtons a {
     width: 100%;
   }
@@ -616,6 +623,7 @@
 
 /* Reduced Motion */
 @media (prefers-reduced-motion) {
+
   .titleDot,
   .frameworkCard,
   .toolCard,
@@ -627,7 +635,7 @@
   .caseStudyImage img {
     transition: none !important;
   }
-  
+
   .titleDot {
     animation: none !important;
   }

@@ -25,7 +25,7 @@
 }
 
 .container {
-  max-width: 1800px;
+  max-width: 1400px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -196,12 +196,12 @@
   .projectCard.expanded {
     flex-direction: row;
   }
-  
+
   .projectCard.expanded .projectImageContainer {
     width: 40%;
     height: auto;
   }
-  
+
   .projectCard.expanded .projectContent {
     width: 60%;
   }

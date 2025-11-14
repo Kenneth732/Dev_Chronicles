@@ -1,5 +1,5 @@
 /* Base Styles */
-.hero {
+.Hero {
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -12,7 +12,7 @@
 }
 
 /* Canvas Particle System */
-.particlesContainer {
+.HeroParticlesContainer {
   position: absolute;
   top: 0;
   left: 0;
@@ -22,7 +22,7 @@
   z-index: 0;
 }
 
-.particlesCanvas {
+.HeroParticlesCanvas {
   position: absolute;
   top: 0;
   left: 0;
@@ -31,7 +31,7 @@
   pointer-events: none;
 }
 
-.luxuryAccent {
+.HeroLuxuryAccent {
   position: absolute;
   top: -50%;
   right: -50%;
@@ -45,7 +45,7 @@
 }
 
 /* Floating Stats */
-.floatingStats {
+.HeroFloatingStats {
   position: absolute;
   top: 50%;
   left: 24px;
@@ -56,7 +56,7 @@
   z-index: 1;
 }
 
-.statItem {
+.HeroStatItem {
   display: flex;
   flex-direction: column;
   opacity: 0;
@@ -64,14 +64,14 @@
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.statNumber {
+.HeroStatNumber {
   font-size: 2rem;
   font-weight: 700;
   color: var(--primary-color);
   line-height: 1;
 }
 
-.statLabel {
+.HeroStatLabel {
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -79,9 +79,9 @@
 }
 
 /* Content Layout */
-.heroContent {
+.HeroContent {
   position: relative;
-  max-width: 1800px;
+  max-width: 1400px;
   margin: 0 auto;
   width: 100%;
   display: grid;
@@ -91,30 +91,30 @@
 }
 
 @media (min-width: 1024px) {
-  .heroContent {
+  .HeroContent {
     grid-template-columns: 1fr 1fr;
     align-items: center;
   }
-  
-  .floatingStats {
+
+  .HeroFloatingStats {
     left: 5%;
   }
 }
 
 /* Typography */
-.textContainer {
+.HeroTextContainer {
   display: flex;
   flex-direction: column;
   gap: 32px;
   position: relative;
 }
 
-.titleWrapper {
+.HeroTitleWrapper {
   position: relative;
   overflow: hidden;
 }
 
-.title {
+.HeroTitle {
   font-size: clamp(2.8rem, 6vw, 5rem);
   font-weight: 700;
   line-height: 1.1;
@@ -126,28 +126,35 @@
   will-change: transform, opacity;
 }
 
-.titleLine {
+.HeroTitleLine {
   display: block;
 }
 
-.titleAccent {
+.HeroTitleAccent {
   color: var(--primary-color);
   position: relative;
   display: inline-block;
 }
 
-.titleDot {
+.HeroTitleDot {
   color: var(--primary-color);
   display: inline-block;
-  animation: pulse 2s infinite;
+  animation: HeroPulse 2s infinite;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+@keyframes HeroPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
 }
 
-.titleUnderline {
+.HeroTitleUnderline {
   width: 120px;
   height: 4px;
   background: linear-gradient(90deg, var(--primary-color), transparent);
@@ -158,7 +165,7 @@
   will-change: transform, opacity;
 }
 
-.subtitle {
+.HeroSubtitle {
   font-size: clamp(1.1rem, 2vw, 1.3rem);
   line-height: 1.7;
   color: var(--text-color);
@@ -171,7 +178,7 @@
   will-change: transform, opacity;
 }
 
-.subtitle::before {
+.HeroSubtitle::before {
   content: '';
   position: absolute;
   left: 0;
@@ -181,14 +188,14 @@
   background: linear-gradient(to bottom, var(--primary-color), transparent);
 }
 
-.subtitleHighlight {
+.HeroSubtitleHighlight {
   font-weight: 600;
   color: var(--primary-color);
   position: relative;
 }
 
 /* CTAs */
-.ctaContainer {
+.HeroCtaContainer {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -199,7 +206,7 @@
   will-change: transform, opacity;
 }
 
-.primaryCta {
+.HeroPrimaryCta {
   padding: 18px 36px;
   background-color: var(--primary-color);
   color: white;
@@ -216,7 +223,7 @@
   will-change: transform;
 }
 
-.primaryCta::before {
+.HeroPrimaryCta::before {
   content: '';
   position: absolute;
   top: 0;
@@ -227,17 +234,17 @@
   transition: 0.5s;
 }
 
-.primaryCta:hover {
+.HeroPrimaryCta:hover {
   background-color: var(--primary-hover);
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
 }
 
-.primaryCta:hover::before {
+.HeroPrimaryCta:hover::before {
   left: 100%;
 }
 
-.secondaryCta {
+.HeroSecondaryCta {
   padding: 18px 32px;
   display: flex;
   align-items: center;
@@ -253,7 +260,7 @@
   will-change: transform;
 }
 
-.secondaryCta::before {
+.HeroSecondaryCta::before {
   content: '';
   position: absolute;
   top: 0;
@@ -265,26 +272,26 @@
   z-index: -1;
 }
 
-.secondaryCta:hover {
+.HeroSecondaryCta:hover {
   background-color: transparent;
   transform: translateY(-3px);
   box-shadow: 0 4px 15px rgba(79, 70, 229, 0.1);
 }
 
-.secondaryCta:hover::before {
+.HeroSecondaryCta:hover::before {
   width: 100%;
 }
 
-.secondaryCta:hover svg {
+.HeroSecondaryCta:hover svg {
   transform: translateX(4px);
 }
 
-.secondaryCta svg {
+.HeroSecondaryCta svg {
   transition: transform 0.3s ease;
 }
 
 /* Signature */
-.signature {
+.HeroSignature {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -295,14 +302,14 @@
   will-change: transform, opacity;
 }
 
-.signatureLine {
+.HeroSignatureLine {
   width: 60px;
   height: 1px;
   background-color: var(--text-color);
   opacity: 0.5;
 }
 
-.signatureText {
+.HeroSignatureText {
   font-size: 0.875rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -310,14 +317,14 @@
 }
 
 /* Code Window */
-.graphicContainer {
+.HeroGraphicContainer {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.luxuryBadge {
+.HeroLuxuryBadge {
   position: absolute;
   top: -20px;
   right: -20px;
@@ -334,35 +341,42 @@
   box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
   transform: rotate(15deg);
   will-change: transform;
-  animation: float 4s ease-in-out infinite;
+  animation: HeroFloat 4s ease-in-out infinite;
 }
 
-@keyframes float {
-  0%, 100% { transform: rotate(15deg) translateY(0); }
-  50% { transform: rotate(15deg) translateY(-10px); }
+@keyframes HeroFloat {
+
+  0%,
+  100% {
+    transform: rotate(15deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(15deg) translateY(-10px);
+  }
 }
 
-.codeWindow {
+.HeroCodeWindow {
   width: 100%;
   max-width: 600px;
   background-color: var(--secondary-color);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.15);
-  transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), 
-              box-shadow 0.8s cubic-bezier(0.25, 0.8, 0.25, 1),
-              filter 0.3s ease;
+  transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.8s cubic-bezier(0.25, 0.8, 0.25, 1),
+    filter 0.3s ease;
   position: relative;
   z-index: 1;
   will-change: transform;
 }
 
-.codeWindow:hover {
+.HeroCodeWindow:hover {
   box-shadow: 0 30px 40px -10px rgba(0, 0, 0, 0.2);
   filter: brightness(1.02);
 }
 
-.windowHeader {
+.HeroWindowHeader {
   display: flex;
   align-items: center;
   padding: 14px 20px;
@@ -371,23 +385,23 @@
   position: relative;
 }
 
-.windowControls {
+.HeroWindowControls {
   display: flex;
   gap: 8px;
 }
 
-.controlDot {
+.HeroControlDot {
   width: 14px;
   height: 14px;
   border-radius: 50%;
   transition: transform 0.3s ease;
 }
 
-.controlDot:hover {
+.HeroControlDot:hover {
   transform: scale(1.1);
 }
 
-.windowTitle {
+.HeroWindowTitle {
   margin-left: 20px;
   font-size: 0.875rem;
   color: var(--text-color);
@@ -395,7 +409,7 @@
   font-family: 'SF Mono', 'Roboto Mono', monospace;
 }
 
-.windowDecoration {
+.HeroWindowDecoration {
   position: absolute;
   right: 20px;
   width: 40%;
@@ -405,7 +419,7 @@
   opacity: 0.3;
 }
 
-.codeContent {
+.HeroCodeContent {
   height: 400px;
   overflow-y: auto;
   padding: 20px;
@@ -413,7 +427,7 @@
   position: relative;
 }
 
-.codeBlock {
+.HeroCodeBlock {
   margin: 0;
   white-space: pre;
   font-family: 'SF Mono', 'Roboto Mono', monospace;
@@ -423,68 +437,75 @@
 }
 
 /* Syntax Highlighting */
-.comment {
+.HeroComment {
   color: #6b7280;
   font-style: italic;
 }
 
-.import {
+.HeroImport {
   color: #8b5cf6;
   font-weight: 500;
 }
 
-.keyword {
+.HeroKeyword {
   color: #ec4899;
   font-weight: 500;
 }
 
-.string {
+.HeroString {
   color: #10b981;
 }
 
-.method {
+.HeroMethod {
   color: #3b82f6;
 }
 
-.property {
+.HeroProperty {
   color: #10b981;
 }
 
-.className {
+.HeroClassName {
   color: #3b82f6;
   font-weight: 500;
 }
 
-.export {
+.HeroExport {
   color: #f59e0b;
   font-weight: 500;
 }
 
 /* Cursor Effects */
-.typingCursor {
+.HeroTypingCursor {
   display: inline-block;
-  animation: blink 0.7s infinite;
+  animation: HeroBlink 0.7s infinite;
   color: var(--primary-color);
   font-weight: bold;
 }
 
-.codeCursor {
+.HeroCodeCursor {
   display: inline-block;
   width: 2px;
   height: 1.2em;
   background-color: var(--primary-color);
   margin-left: 4px;
-  animation: blink 0.7s infinite;
+  animation: HeroBlink 0.7s infinite;
   vertical-align: middle;
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+@keyframes HeroBlink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 /* Visual Effects */
-.glowEffect {
+.HeroGlowEffect {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -498,7 +519,7 @@
   will-change: transform;
 }
 
-.reflection {
+.HeroReflection {
   position: absolute;
   bottom: -10%;
   left: 0;
@@ -512,7 +533,7 @@
 }
 
 /* Scroll Indicator */
-.scrollIndicator {
+.HeroScrollIndicator {
   position: absolute;
   bottom: 60px;
   left: 50%;
@@ -523,40 +544,53 @@
   gap: 12px;
   color: var(--text-color);
   opacity: 0.8;
-  animation: bounce 2.5s infinite;
+  animation: HeroBounce 2.5s infinite;
   will-change: transform;
   transition: opacity 0.3s ease;
 }
 
-.scrollText {
+.HeroScrollText {
   font-size: 0.875rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
-.scrollLine {
+.HeroScrollLine {
   width: 1px;
   height: 50px;
   background: linear-gradient(to bottom, var(--text-color), transparent);
 }
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-  40% { transform: translateY(-15px) translateX(-50%); }
-  60% { transform: translateY(-7px) translateX(-50%); }
+@keyframes HeroBounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+
+  40% {
+    transform: translateY(-15px) translateX(-50%);
+  }
+
+  60% {
+    transform: translateY(-7px) translateX(-50%);
+  }
 }
 
 /* Mobile Optimizations */
 @media (max-width: 768px) {
-  .hero {
+  .Hero {
     padding: 100px 20px 60px;
   }
-  
-  .heroContent {
+
+  .HeroContent {
     gap: 60px;
   }
-  
-  .floatingStats {
+
+  .HeroFloatingStats {
     position: relative;
     top: auto;
     left: auto;
@@ -566,48 +600,54 @@
     margin-bottom: 40px;
     gap: 24px;
   }
-  
-  .statItem {
+
+  .HeroStatItem {
     align-items: center;
   }
-  
-  .codeWindow {
+
+  .HeroCodeWindow {
     max-width: 100%;
   }
-  
-  .codeContent {
+
+  .HeroCodeContent {
     height: 300px;
   }
 }
 
 /* Reduced motion preferences */
 @media (prefers-reduced-motion) {
-  .title, .subtitle, .ctaContainer, .signature, .statItem {
+
+  .HeroTitle,
+  .HeroSubtitle,
+  .HeroCtaContainer,
+  .HeroSignature,
+  .HeroStatItem {
     transition: none !important;
     opacity: 1 !important;
     transform: none !important;
   }
-  
-  .titleUnderline {
+
+  .HeroTitleUnderline {
     transition: none !important;
     opacity: 1 !important;
     transform: none !important;
   }
-  
-  .codeWindow {
+
+  .HeroCodeWindow {
     transition: none !important;
   }
-  
-  .luxuryBadge {
+
+  .HeroLuxuryBadge {
     animation: none !important;
   }
-  
-  .typingCursor, .codeCursor {
+
+  .HeroTypingCursor,
+  .HeroCodeCursor {
     animation: none !important;
     opacity: 1 !important;
   }
-  
-  .scrollIndicator {
+
+  .HeroScrollIndicator {
     animation: none !important;
   }
 }

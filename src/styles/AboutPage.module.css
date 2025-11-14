@@ -1,12 +1,12 @@
 /* Base Styles */
-.aboutPage {
+.AboutPage {
   position: relative;
   color: var(--text-color);
   background-color: var(--background-color);
   overflow-x: hidden;
 }
 
-.canvasBackground {
+.AboutCanvasBackground {
   position: fixed;
   top: 0;
   left: 0;
@@ -17,24 +17,23 @@
 }
 
 /* Hero Section */
-.hero {
+.AboutHero {
   position: relative;
   min-height: 100vh;
-  display: flex;
   align-items: center;
   padding: 120px 24px;
   z-index: 1;
 }
 
-.heroContent {
-  max-width: 1800px;
+.AboutHeroContent {
+  max-width: 1400px;
   margin: 0 auto;
-  width: 100%;
   position: relative;
   z-index: 2;
+    margin-top: 10%;
 }
 
-.heroTitle {
+.AboutHeroTitle {
   font-size: clamp(3rem, 8vw, 5rem);
   font-weight: 700;
   line-height: 1.1;
@@ -42,28 +41,28 @@
   margin-bottom: 32px;
 }
 
-.titleLine {
+.AboutTitleLine {
   display: block;
 }
 
-.titleAccent {
+.AboutTitleAccent {
   color: var(--primary-color);
   position: relative;
   display: inline-block;
 }
 
-.titleDot {
+.AboutTitleDot {
   color: var(--primary-color);
   display: inline-block;
-  animation: pulse 2s infinite;
+  animation: AboutPulse 2s infinite;
 }
 
-@keyframes pulse {
+@keyframes AboutPulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
 }
 
-.heroSubtitle {
+.AboutHeroSubtitle {
   font-size: clamp(1.2rem, 3vw, 1.5rem);
   line-height: 1.6;
   max-width: 600px;
@@ -71,7 +70,7 @@
   opacity: 0.9;
 }
 
-.ctaButton {
+.AboutCtaButton {
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -85,30 +84,30 @@
   box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3);
 }
 
-.ctaButton:hover {
+.AboutCtaButton:hover {
   background-color: var(--primary-hover);
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
 }
 
-.heroImage {
+.AboutHeroImage {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
-  overflow: hidden; /* Ensures image doesn't overflow */
+  overflow: hidden;
 }
 
-.heroImage img {
+.AboutHeroImage img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures image covers the space */
-  object-position: center; /* Focus on center of image */
+  object-fit: cover;
+  object-position: center;
 }
 
-.imageOverlay {
+.AboutImageOverlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -118,68 +117,69 @@
 }
 
 /* Mission Section */
-.mission {
+.AboutMission {
   position: relative;
   padding: 120px 24px;
   z-index: 1;
 }
 
-.missionContent {
+.AboutMissionContent {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.sectionTitle {
+.AboutSectionTitle {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin-bottom: 60px;
   position: relative;
   display: flex;
   align-items: center;
+  margin-left: 10rem;
   gap: 20px;
 }
 
-.titleNumber {
+.AboutTitleNumber {
   font-size: 1.5rem;
   color: var(--primary-color);
   opacity: 0.5;
 }
 
-.missionGrid {
+.AboutMissionGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
 }
 
-.missionCard {
+.AboutMissionCard {
   background: var(--secondary-color);
   padding: 40px;
   border-radius: 16px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.missionCard:hover {
+.AboutMissionCard:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.cardIcon {
+.AboutCardIcon {
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
-.missionCard h3 {
+.AboutMissionCard h3 {
   font-size: 1.5rem;
   margin-bottom: 16px;
   color: var(--primary-color);
 }
 
-.missionCard p {
+.AboutMissionCard p {
   line-height: 1.8;
   opacity: 0.8;
 }
 
 /* Stats Section */
-.stats {
+.AboutStats {
   position: relative;
   padding: 80px 24px;
   background-color: var(--primary-color);
@@ -187,7 +187,7 @@
   z-index: 1;
 }
 
-.statsContainer {
+.AboutStatsContainer {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -196,12 +196,12 @@
   gap: 40px;
 }
 
-.statItem {
+.AboutStatItem {
   text-align: center;
   min-width: 200px;
 }
 
-.statNumber {
+.AboutStatNumber {
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 700;
   display: block;
@@ -209,26 +209,26 @@
   margin-bottom: 12px;
 }
 
-.statLabel {
+.AboutStatLabel {
   font-size: 1.1rem;
   opacity: 0.9;
 }
 
 /* Timeline Section */
-.timelineSection {
+.AboutTimelineSection {
   position: relative;
   padding: 120px 24px;
   z-index: 1;
 }
 
-.timelineContainer {
+.AboutTimelineContainer {
   max-width: 800px;
   margin: 0 auto;
   position: relative;
   padding-left: 60px;
 }
 
-.timelineLine {
+.AboutTimelineLine {
   position: absolute;
   left: 29px;
   top: 0;
@@ -238,7 +238,7 @@
   z-index: 0;
 }
 
-.timelineItem {
+.AboutTimelineItem {
   position: relative;
   padding: 40px 0;
   cursor: pointer;
@@ -246,11 +246,11 @@
   transition: all 0.4s ease;
 }
 
-.timelineItem.active {
+.AboutTimelineItem.AboutActive {
   padding: 60px 0;
 }
 
-.timelineDot {
+.AboutTimelineDot {
   position: absolute;
   left: -60px;
   top: 50%;
@@ -264,26 +264,26 @@
   z-index: 2;
 }
 
-.timelineItem.active .timelineDot {
+.AboutTimelineItem.AboutActive .AboutTimelineDot {
   width: 30px;
   height: 30px;
   left: -65px;
   box-shadow: 0 0 0 8px rgba(79, 70, 229, 0.2);
 }
 
-.timelineContent {
+.AboutTimelineContent {
   background: var(--secondary-color);
   padding: 30px;
   border-radius: 12px;
   transition: all 0.4s ease;
 }
 
-.timelineItem.active .timelineContent {
+.AboutTimelineItem.AboutActive .AboutTimelineContent {
   transform: translateX(20px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.timelineYear {
+.AboutTimelineYear {
   display: inline-block;
   padding: 4px 12px;
   background-color: var(--primary-color);
@@ -294,25 +294,25 @@
   margin-bottom: 16px;
 }
 
-.timelineTitle {
+.AboutTimelineTitle {
   font-size: 1.5rem;
   margin-bottom: 12px;
   color: var(--text-color);
 }
 
-.timelineDescription {
+.AboutTimelineDescription {
   line-height: 1.8;
   opacity: 0.8;
 }
 
 /* Team Section */
-.team {
+.AboutTeam {
   position: relative;
   padding: 120px 24px;
   z-index: 1;
 }
 
-.teamGrid {
+.AboutTeamGrid {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
@@ -320,37 +320,37 @@
   gap: 30px;
 }
 
-.teamCard {
+.AboutTeamCard {
   background: var(--secondary-color);
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.teamCard:hover {
+.AboutTeamCard:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.cardImage {
+.AboutCardImage {
   position: relative;
   width: 100%;
   height: 300px;
   overflow: hidden;
 }
 
-.cardImage img {
+.AboutCardImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.8s ease;
 }
 
-.teamCard:hover .cardImage img {
+.AboutTeamCard:hover .AboutCardImage img {
   transform: scale(1.05);
 }
 
-.cardOverlay {
+.AboutCardOverlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -361,54 +361,54 @@
   transition: opacity 0.4s ease;
 }
 
-.cardOverlay.active {
+.AboutCardOverlay.AboutActive {
   opacity: 1;
 }
 
-.cardContent {
+.AboutCardContent {
   padding: 24px;
   position: relative;
 }
 
-.cardContent h3 {
+.AboutCardContent h3 {
   font-size: 1.3rem;
   margin-bottom: 4px;
 }
 
-.role {
+.AboutRole {
   color: var(--primary-color);
   font-weight: 500;
   margin-bottom: 8px;
 }
 
-.expertise {
+.AboutExpertise {
   font-size: 0.9rem;
   opacity: 0.7;
   margin-bottom: 16px;
 }
 
-.cardHoverContent {
+.AboutCardHoverContent {
   height: 0;
   overflow: hidden;
   transition: height 0.4s ease;
 }
 
-.teamCard:hover .cardHoverContent {
+.AboutTeamCard:hover .AboutCardHoverContent {
   height: auto;
 }
 
-.funFact {
+.AboutFunFact {
   font-size: 0.9rem;
   margin-bottom: 16px;
   font-style: italic;
 }
 
-.socialLinks {
+.AboutSocialLinks {
   display: flex;
   gap: 12px;
 }
 
-.socialLinks a {
+.AboutSocialLinks a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -422,49 +422,49 @@
   transition: all 0.3s ease;
 }
 
-.socialLinks a:hover {
+.AboutSocialLinks a:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
 
 /* Values Section */
-.values {
+.AboutValues {
   position: relative;
   padding: 120px 24px;
   z-index: 1;
 }
 
-.valuesContainer {
+.AboutValuesContainer {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   gap: 60px;
 }
 
-.valueColumn {
+.AboutValueColumn {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 60px;
 }
 
-.valueItem {
+.AboutValueItem {
   position: relative;
   padding-left: 40px;
 }
 
-.valueItem h3 {
+.AboutValueItem h3 {
   font-size: 1.5rem;
   margin-bottom: 16px;
   color: var(--primary-color);
 }
 
-.valueItem p {
+.AboutValueItem p {
   line-height: 1.8;
   opacity: 0.8;
 }
 
-.valueItem::before {
+.AboutValueItem::before {
   content: '';
   position: absolute;
   left: 0;
@@ -477,7 +477,7 @@
 }
 
 /* CTA Section */
-.ctaSection {
+.AboutCtaSection {
   position: relative;
   padding: 120px 24px;
   background: linear-gradient(to right, var(--primary-color), #6b63ff);
@@ -485,32 +485,32 @@
   z-index: 1;
 }
 
-.ctaContainer {
+.AboutCtaContainer {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
 
-.ctaTitle {
+.AboutCtaTitle {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin-bottom: 24px;
 }
 
-.ctaText {
+.AboutCtaText {
   font-size: 1.2rem;
   line-height: 1.8;
   margin-bottom: 40px;
   opacity: 0.9;
 }
 
-.ctaButtons {
+.AboutCtaButtons {
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.primaryCta {
+.AboutPrimaryCta {
   padding: 18px 36px;
   background-color: white;
   color: var(--primary-color);
@@ -520,12 +520,12 @@
   transition: all 0.4s ease;
 }
 
-.primaryCta:hover {
+.AboutPrimaryCta:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.secondaryCta {
+.AboutSecondaryCta {
   padding: 18px 36px;
   border: 1px solid white;
   border-radius: 8px;
@@ -534,75 +534,75 @@
   transition: all 0.4s ease;
 }
 
-.secondaryCta:hover {
+.AboutSecondaryCta:hover {
   background-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-3px);
 }
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
-  .valuesContainer {
+  .AboutValuesContainer {
     flex-direction: column;
     gap: 40px;
   }
   
-  .missionGrid {
+  .AboutMissionGrid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .hero {
+  .AboutHero {
     min-height: auto;
     padding: 100px 24px;
   }
   
-  .timelineContainer {
+  .AboutTimelineContainer {
     padding-left: 40px;
   }
   
-  .timelineDot {
+  .AboutTimelineDot {
     left: -40px;
   }
   
-  .timelineItem.active .timelineDot {
+  .AboutTimelineItem.AboutActive .AboutTimelineDot {
     left: -45px;
   }
   
-  .teamGrid {
+  .AboutTeamGrid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 480px) {
-  .teamGrid {
+  .AboutTeamGrid {
     grid-template-columns: 1fr;
   }
   
-  .ctaButtons {
+  .AboutCtaButtons {
     flex-direction: column;
   }
   
-  .ctaButtons a {
+  .AboutCtaButtons a {
     width: 100%;
   }
 }
 
 /* Reduced Motion */
 @media (prefers-reduced-motion) {
-  .missionCard,
-  .teamCard,
-  .timelineItem,
-  .ctaButtons a,
-  .cardImage img {
+  .AboutMissionCard,
+  .AboutTeamCard,
+  .AboutTimelineItem,
+  .AboutCtaButtons a,
+  .AboutCardImage img {
     transition: none !important;
   }
   
-  .cardHoverContent {
+  .AboutCardHoverContent {
     transition: none !important;
   }
   
-  .titleDot {
+  .AboutTitleDot {
     animation: none !important;
   }
 }
