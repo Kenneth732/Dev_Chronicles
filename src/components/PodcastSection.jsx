@@ -6,10 +6,10 @@ import { FiPlay, FiPause, FiSkipBack, FiSkipForward, FiVolume2 } from 'react-ico
 import { FaSpotify, FaApple, FaGooglePlay } from 'react-icons/fa';
 import { RiSpeedLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
-import ep001Audio from '../assets/ep001.mp3';
-import ep002Audio from '../assets/ep002.mp3';
-import ep003Audio from '../assets/ep003.mp3';
-import ep004Audio from '../assets/ep004.mp3';
+import ep001Audio from './ep001.mp3';
+import ep002Audio from './ep002.mp3';
+import ep003Audio from './ep003.mp3';
+import ep004Audio from './ep001.mp3';
 
 const PodcastSection = () => {
   const [episodes] = useState([
