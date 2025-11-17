@@ -6,6 +6,10 @@ import { FiPlay, FiPause, FiSkipBack, FiSkipForward, FiVolume2 } from 'react-ico
 import { FaSpotify, FaApple, FaGooglePlay } from 'react-icons/fa';
 import { RiSpeedLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
+import ep001Audio from '../assets/ep001.mp3';
+import ep002Audio from '../assets/ep002.mp3';
+import ep003Audio from '../assets/ep003.mp3';
+import ep004Audio from '../assets/ep004.mp3';
 
 const PodcastSection = () => {
   const [episodes] = useState([
@@ -15,7 +19,7 @@ const PodcastSection = () => {
       date: '2024-01-15',
       duration: 2722,
       description: 'We discuss emerging trends in web development including WASM, React Server Components, and the resurgence of monoliths. This episode features special guests from leading tech companies sharing their insights on the evolving landscape.',
-      audioUrl: '/ep001.mp3',
+      audioUrl: ep001Audio,
       coverImage: 'https://media.licdn.com/dms/image/v2/D4D12AQFV9lmozBJXhQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1705124282310?e=2147483647&v=beta&t=AkLKb8_R4E_HFN-mFfPr9wHLbwiQs29Nz5iKnB97V6I',
       platforms: {
         spotify: 'https://spotify.com/yourpodcast/ep001',
@@ -31,7 +35,7 @@ const PodcastSection = () => {
       date: '2024-02-10',
       duration: 3138,
       description: 'Exploring the latest advancements in AI, comparing different LLMs, and discussing practical applications for developers. Our panel of AI researchers breaks down the technical details in accessible ways.',
-      audioUrl: '/ep002.mp3',
+      audioUrl: ep002Audio,
       coverImage: 'https://miro.medium.com/v2/resize:fit:1200/0*zyBWRKPZV8lOV69E.jpg',
       platforms: {
         spotify: 'https://spotify.com/yourpodcast/ep002',
@@ -47,7 +51,7 @@ const PodcastSection = () => {
       date: '2024-03-05',
       duration: 2325,
       description: 'Deep dive into microservices architecture using Go, covering best practices, common pitfalls, and performance optimization. Learn from the engineering team at a Fortune 500 company about their real-world implementation.',
-      audioUrl: '/ep003.mp3',
+      audioUrl: ep003Audio,
       coverImage: 'https://media.licdn.com/dms/image/v2/D5612AQGRaGanbQtebA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1709851350044?e=2147483647&v=beta&t=pcnPt9fPmXuz5jCzXq7Pg0GUKixpFydPIkbDcT38GKA',
       platforms: {
         spotify: 'https://spotify.com/yourpodcast/ep003',
@@ -62,7 +66,7 @@ const PodcastSection = () => {
       date: '2024-04-20',
       duration: 2952,
       description: 'Annual review of the JavaScript ecosystem, including new features, framework trends, and developer survey results. We analyze data from over 10,000 developers to identify the most significant shifts in the JS world.',
-      audioUrl: '/ep004.mp3',
+      audioUrl: ep004Audio,
       coverImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2mFl6Vz7lP3ir2TcuwqVV7kk7xLPx0oWwNw&s',
       platforms: {
         spotify: 'https://spotify.com/yourpodcast/ep004',
